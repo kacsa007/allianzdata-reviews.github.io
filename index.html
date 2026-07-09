@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endre Lázár — Software Engineer · AI/ML, Data & Platform Migrations</title>
+<meta name="description" content="Endre Lázár — software engineer in Switzerland. AI/ML & data solutions, large-scale platform migrations, banking & trade-finance systems. Swisscom, Morgan Stanley, Leica Geosystems, Traydstream.">
+<meta property="og:title" content="Endre Lázár — Software Engineer">
+<meta property="og:description" content="AI/ML & data solutions · platform migrations · banking & trade-finance systems · Switzerland">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<style>
+  :root {
+    --bg: #0b1120; --bg2: #101a30; --card: #16213b; --line: #24304f;
+    --txt: #dbe4f3; --dim: #8fa1c0; --acc: #4fd1c5; --acc2: #c9a227; --link: #7ab8ff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--txt); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 88px 0 56px; background: radial-gradient(1000px 400px at 20% -10%, #14304d 0%, transparent 60%), radial-gradient(800px 350px at 90% 0%, #143d3a 0%, transparent 55%); border-bottom: 1px solid var(--line); }
+  .hello { color: var(--acc); font-size: 15px; letter-spacing: 1px; }
+  h1 { font-size: clamp(34px, 6vw, 54px); letter-spacing: 1px; margin: 6px 0 4px; }
+  .tag { color: var(--dim); font-size: clamp(16px, 2.4vw, 20px); max-width: 640px; }
+  .tag b { color: var(--txt); font-weight: 600; }
+  .loc { margin-top: 14px; color: var(--dim); font-size: 14px; }
+  .links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 9px 18px; border: 1px solid var(--acc); border-radius: 8px; color: var(--acc); font-size: 14px; transition: all .15s; }
+  .btn:hover { background: var(--acc); color: #06251f; text-decoration: none; }
+  .btn.alt { border-color: var(--line); color: var(--dim); }
+  .btn.alt:hover { background: var(--card); color: var(--txt); }
+
+  section { padding: 56px 0 8px; }
+  h2 { font-size: 22px; margin-bottom: 22px; letter-spacing: .5px; }
+  h2::before { content: '// '; color: var(--acc); font-family: ui-monospace, Menlo, Consolas, monospace; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-top: 34px; }
+  .stat { background: rgba(22, 33, 59, .55); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .stat .n { font-size: 24px; font-weight: 700; color: var(--acc); font-family: ui-monospace, Menlo, monospace; }
+  .stat .l { font-size: 12.5px; color: var(--dim); margin-top: 2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; transition: transform .15s, border-color .15s; }
+  .card:hover { transform: translateY(-3px); border-color: var(--acc); }
+  .card h3 { font-size: 17px; margin-bottom: 2px; }
+  .card .where { font-size: 13px; color: var(--acc2); margin-bottom: 10px; font-weight: 600; }
+  .card p { font-size: 14.5px; color: var(--dim); flex: 1; }
+  .chips { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-family: ui-monospace, Menlo, monospace; font-size: 11.5px; color: var(--acc); background: rgba(79, 209, 197, .08); border: 1px solid rgba(79, 209, 197, .25); padding: 2px 9px; border-radius: 20px; }
+
+  .repos-note { color: var(--dim); font-size: 14px; margin-bottom: 18px; }
+  .repo { border-left: 3px solid var(--acc); }
+  .repo .meta { display: flex; gap: 16px; margin-top: 12px; font-size: 12.5px; color: var(--dim); font-family: ui-monospace, Menlo, monospace; }
+  .repo .meta .lang::before { content: '● '; color: var(--acc2); }
+  #repo-fallback { display: none; color: var(--dim); font-size: 14.5px; background: var(--card); border: 1px dashed var(--line); border-radius: 12px; padding: 20px; }
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; }
+  .skill { background: var(--bg2); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+  .skill .k { font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: var(--acc); margin-bottom: 6px; }
+  .skill .v { font-size: 14px; color: var(--dim); }
+
+  .quote { border-left: 3px solid var(--acc2); padding: 4px 0 4px 20px; margin: 26px 0 10px; color: var(--txt); font-style: italic; font-size: 16.5px; max-width: 720px; }
+
+  footer { margin-top: 70px; border-top: 1px solid var(--line); padding: 40px 0 60px; color: var(--dim); font-size: 14px; }
+  footer .big { font-size: 20px; color: var(--txt); margin-bottom: 8px; }
+  .langs { margin-top: 10px; font-size: 13.5px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="hello mono">hi, my name is</div>
+    <h1>Endre Lázár.</h1>
+    <p class="tag">I build <b>AI/ML &amp; data solutions</b> and drive <b>large-scale platform migrations</b> — from banking infrastructure at Morgan Stanley to a 500,000-device network platform at Swisscom.</p>
+    <div class="loc">📍 Siebnen SZ, Switzerland &nbsp;·&nbsp; Software Engineer &amp; Security Champion @ Swisscom</div>
+    <div class="links">
+      <a class="btn" href="https://github.com/kacsa007" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="https://www.linkedin.com/in/lendre94/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn alt" href="mailto:endre.lazar@yahoo.com">endre.lazar@yahoo.com</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">500k+</div><div class="l">devices in the platform migration I architect</div></div>
+      <div class="stat"><div class="n">2M+</div><div class="l">events/day across monitoring pipelines</div></div>
+      <div class="stat"><div class="n">$9T</div><div class="l">trade-finance market served by AI models I trained</div></div>
+      <div class="stat"><div class="n">50+</div><div class="l">STEM students mentored</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>about</h2>
+    <p style="max-width:760px;color:var(--dim)">Software engineer with 8+ years across telecommunications, banking, and enterprise software. I combine hands-on engineering — Python, Java, cloud-native stacks — with production AI/ML: predictive models for bandwidth forecasting and anomaly detection, document AI for trade finance, and GenAI/LLM tooling woven into everyday team workflows. As Security Champion I keep quality honest through threat modeling and architecture reviews. I believe leadership is a practice, not a length of service — I mentor, unblock, and set technical direction I can defend at the whiteboard.</p>
+    <div class="quote">"Failure is part of the journey. Every challenge is an opportunity to stand up, rethink, and start again."</div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>case studies</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Cisco PCA Platform Migration</h3>
+        <div class="where">Swisscom · 2022 – present</div>
+        <p>Driving the end-to-end migration of monitoring infrastructure from VMware Smarts &amp; Watch4net to Cisco PCA across ~500k devices — redesigning data pipelines, alerting architecture, and integration patterns, with BluePlanet RDC for automated resource discovery. Product owner for stakeholder-facing workstreams serving Swiss enterprises and banks.</p>
+        <div class="chips"><span class="chip">architecture</span><span class="chip">python</span><span class="chip">kubernetes</span><span class="chip">spring-boot</span><span class="chip">product-ownership</span></div>
+      </div>
+      <div class="card">
+        <h3>Predictive Network Analytics</h3>
+        <div class="where">Swisscom · 2022 – present</div>
+        <p>Production ML for time-series bandwidth forecasting, anomaly detection, and capacity planning over 2M+ daily events. Statistical reporting products designed with — and for — enterprise clients. GenAI/LLM adoption across the team: automated code review, intelligent log analysis, threat detection.</p>
+        <div class="chips"><span class="chip">scikit-learn</span><span class="chip">time-series</span><span class="chip">genai/llm</span><span class="chip">data-pipelines</span></div>
+      </div>
+      <div class="card">
+        <h3>Document AI for Trade Finance</h3>
+        <div class="where">Traydstream · 2020 (contract)</div>
+        <p>Helped shape the OCR algorithm of an AI platform automating document processing in the $9 trillion trade-finance market — training models for various contract types and guiding parser design across document classes. Greenfield fintech, built from the ground up.</p>
+        <div class="chips"><span class="chip">ocr</span><span class="chip">model-training</span><span class="chip">python</span><span class="chip">fintech</span></div>
+      </div>
+      <div class="card">
+        <h3>Quant-Dev Data &amp; Pipelines</h3>
+        <div class="where">Morgan Stanley · 2018 – 2020</div>
+        <p>Built data-science and pipeline solutions shaping MS infrastructure — ML for indexing unstructured data, a Splunk dashboard monitoring ~70k devices, operational trend models. Later moved via internal mobility into trading-focused teams. Led the Certification Automation Tool project.</p>
+        <div class="chips"><span class="chip">splunk-ml</span><span class="chip">kdb</span><span class="chip">flask</span><span class="chip">banking</span></div>
+      </div>
+      <div class="card">
+        <h3>CI/CD at Manufacturing Scale</h3>
+        <div class="where">Leica Geosystems (Hexagon) · 2021</div>
+        <p>Redesigned the firm-wide licensing team's pipeline with dev/QA/prod segregation: deployments −30%, builds −60%, release time from 2 hours to 49 minutes. Cross-platform build automation for iOS, Android, Windows, and Linux.</p>
+        <div class="chips"><span class="chip">ci/cd</span><span class="chip">devops</span><span class="chip">.net</span><span class="chip">c++</span></div>
+      </div>
+      <div class="card">
+        <h3>Smart Parking Venture</h3>
+        <div class="where">Side venture · Switzerland</div>
+        <p>Designed a parking solution using image recognition and automation to simplify parking in Swiss cities. It didn't find investors or government backing — and it taught me more about product, persistence, and starting again than any success has.</p>
+        <div class="chips"><span class="chip">computer-vision</span><span class="chip">entrepreneurship</span><span class="chip">lessons-learned</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="repos">
+  <div class="wrap">
+    <h2>github repositories</h2>
+    <p class="repos-note">Pulled live from <a href="https://github.com/kacsa007" target="_blank" rel="noopener">github.com/kacsa007</a> — always current.</p>
+    <div class="grid" id="repo-grid"></div>
+    <div id="repo-fallback">Couldn't reach the GitHub API right now — browse my repositories directly at <a href="https://github.com/kacsa007?tab=repositories" target="_blank" rel="noopener">github.com/kacsa007</a>.</div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>skills</h2>
+    <div class="skills">
+      <div class="skill"><div class="k">languages</div><div class="v">Python · Java · C++ · JavaScript · Kotlin · C# · SQL</div></div>
+      <div class="skill"><div class="k">ai / ml</div><div class="v">PyTorch · scikit-learn · NumPy · Pandas · LLMs &amp; GenAI · Splunk ML · data pipelines</div></div>
+      <div class="skill"><div class="k">devops &amp; cloud</div><div class="v">Docker · Kubernetes · AWS · Azure · OpenShift · Ansible · CI/CD (Jenkins, GitLab, Bitbucket)</div></div>
+      <div class="skill"><div class="k">frameworks</div><div class="v">Spring Boot · Flask · Django · Angular · Node.js</div></div>
+      <div class="skill"><div class="k">data</div><div class="v">SQL · KDB · MongoDB · MariaDB · statistical methods · data modeling · reporting</div></div>
+      <div class="skill"><div class="k">security</div><div class="v">Threat modeling · vulnerability assessment · penetration testing · architecture review</div></div>
+      <div class="skill"><div class="k">emerging</div><div class="v">Blockchain · DeFi · Web3 · real-world asset tokenization</div></div>
+      <div class="skill"><div class="k">human languages</div><div class="v">EN, HU, RO (native) · DE (advanced) · ES (intermediate) · IT, FR (beginner)</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Let's build something. <a href="mailto:endre.lazar@yahoo.com">endre.lazar@yahoo.com</a></div>
+    <div>Based in Siebnen SZ, Switzerland · open to Zurich, Baden &amp; remote-friendly roles</div>
+    <div class="langs mono">© <span id="yr"></span> Endre Lázár · built as a single HTML file, hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+(async function loadRepos() {
+  const grid = document.getElementById('repo-grid');
+  const fallback = document.getElementById('repo-fallback');
+  try {
+    const res = await fetch('https://api.github.com/users/kacsa007/repos?sort=updated&per_page=12');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    let repos = await res.json();
+    repos = repos.filter(r => !r.fork);
+    if (!repos.length) throw new Error('no repos');
+    for (const r of repos) {
+      const card = document.createElement('a');
+      card.className = 'card repo';
+      card.href = r.html_url; card.target = '_blank'; card.rel = 'noopener';
+      card.style.color = 'inherit';
+      const updated = new Date(r.pushed_at).toLocaleDateString('en-GB', { year: 'numeric', month: 'short' });
+      card.innerHTML =
+        '<h3>' + r.name + '</h3>' +
+        '<p>' + (r.description ? r.description : 'No description yet — click through to explore the code.') + '</p>' +
+        '<div class="meta">' +
+          (r.language ? '<span class="lang">' + r.language + '</span>' : '') +
+          '<span>★ ' + r.stargazers_count + '</span>' +
+          '<span>updated ' + updated + '</span>' +
+        '</div>';
+      grid.appendChild(card);
+    }
+  } catch (e) {
+    fallback.style.display = 'block';
+  }
+})();
+</script>
+
+</body>
+</html>
