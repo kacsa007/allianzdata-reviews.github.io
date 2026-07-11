@@ -9,179 +9,187 @@
 <meta property="og:description" content="AI/ML & data solutions · platform migrations · banking & trade-finance systems · Switzerland">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital@1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0b1120; --bg2: #101a30; --card: #16213b; --line: #24304f;
-    --txt: #dbe4f3; --dim: #8fa1c0; --acc: #4fd1c5; --acc2: #c9a227; --link: #7ab8ff;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--txt); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-  a { color: var(--link); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-
-  header { padding: 88px 0 56px; background: radial-gradient(1000px 400px at 20% -10%, #14304d 0%, transparent 60%), radial-gradient(800px 350px at 90% 0%, #143d3a 0%, transparent 55%); border-bottom: 1px solid var(--line); }
-  .hello { color: var(--acc); font-size: 15px; letter-spacing: 1px; }
-  h1 { font-size: clamp(34px, 6vw, 54px); letter-spacing: 1px; margin: 6px 0 4px; }
-  .tag { color: var(--dim); font-size: clamp(16px, 2.4vw, 20px); max-width: 640px; }
-  .tag b { color: var(--txt); font-weight: 600; }
-  .loc { margin-top: 14px; color: var(--dim); font-size: 14px; }
-  .links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn { display: inline-block; padding: 9px 18px; border: 1px solid var(--acc); border-radius: 8px; color: var(--acc); font-size: 14px; transition: all .15s; }
-  .btn:hover { background: var(--acc); color: #06251f; text-decoration: none; }
-  .btn.alt { border-color: var(--line); color: var(--dim); }
-  .btn.alt:hover { background: var(--card); color: var(--txt); }
-
-  section { padding: 56px 0 8px; }
-  h2 { font-size: 22px; margin-bottom: 22px; letter-spacing: .5px; }
-  h2::before { content: '// '; color: var(--acc); font-family: ui-monospace, Menlo, Consolas, monospace; }
-
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-top: 34px; }
-  .stat { background: rgba(22, 33, 59, .55); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
-  .stat .n { font-size: 24px; font-weight: 700; color: var(--acc); font-family: ui-monospace, Menlo, monospace; }
-  .stat .l { font-size: 12.5px; color: var(--dim); margin-top: 2px; }
-
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; transition: transform .15s, border-color .15s; }
-  .card:hover { transform: translateY(-3px); border-color: var(--acc); }
-  .card h3 { font-size: 17px; margin-bottom: 2px; }
-  .card .where { font-size: 13px; color: var(--acc2); margin-bottom: 10px; font-weight: 600; }
-  .card p { font-size: 14.5px; color: var(--dim); flex: 1; }
-  .chips { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
-  .chip { font-family: ui-monospace, Menlo, monospace; font-size: 11.5px; color: var(--acc); background: rgba(79, 209, 197, .08); border: 1px solid rgba(79, 209, 197, .25); padding: 2px 9px; border-radius: 20px; }
-
-  .repos-note { color: var(--dim); font-size: 14px; margin-bottom: 18px; }
-  .repo { border-left: 3px solid var(--acc); }
-  .repo .meta { display: flex; gap: 16px; margin-top: 12px; font-size: 12.5px; color: var(--dim); font-family: ui-monospace, Menlo, monospace; }
-  .repo .meta .lang::before { content: '● '; color: var(--acc2); }
-  #repo-fallback { display: none; color: var(--dim); font-size: 14.5px; background: var(--card); border: 1px dashed var(--line); border-radius: 12px; padding: 20px; }
-
-  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; }
-  .skill { background: var(--bg2); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
-  .skill .k { font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: var(--acc); margin-bottom: 6px; }
-  .skill .v { font-size: 14px; color: var(--dim); }
-
-  .quote { border-left: 3px solid var(--acc2); padding: 4px 0 4px 20px; margin: 26px 0 10px; color: var(--txt); font-style: italic; font-size: 16.5px; max-width: 720px; }
-
-  footer { margin-top: 70px; border-top: 1px solid var(--line); padding: 40px 0 60px; color: var(--dim); font-size: 14px; }
-  footer .big { font-size: 20px; color: var(--txt); margin-bottom: 8px; }
-  .langs { margin-top: 10px; font-size: 13.5px; }
+:root{--paper:#f1eee7;--panel:#e8e4d9;--line:#d4cfc0;--ink:#1d1c19;--dim:#6d695d;--acc:#c5391f;--blue:#2c50c8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 "IBM Plex Sans",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:var(--acc)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+.acc{color:var(--acc)}
+.fx{display:flex}.ac{align-items:center}.jb{justify-content:space-between}.gap12{gap:12px}.gap24{gap:24px}.wrapf{flex-wrap:wrap}
+.nav{position:sticky;top:0;z-index:50;background:rgba(241,238,231,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.navin{height:60px}
+.brand{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:1px;color:var(--ink)}
+.navlink{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);letter-spacing:.5px}
+.navlink:hover{color:var(--acc)}
+.hero{position:relative;padding:104px 0 0;overflow:hidden}
+.gridbg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.5;-webkit-mask-image:radial-gradient(900px 500px at 30% 0%,#000 0%,transparent 75%);mask-image:radial-gradient(900px 500px at 30% 0%,#000 0%,transparent 75%);pointer-events:none}
+.heroin{position:relative}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--acc);letter-spacing:2px}
+.name{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(50px,8.5vw,94px);line-height:.98;margin:16px 0 22px;letter-spacing:-2.5px}
+.name em{font-style:normal;color:var(--acc)}
+.tagline{font-size:clamp(17px,2.2vw,20px);color:var(--dim);max-width:660px;margin:0}
+.tagline b{color:var(--ink);font-weight:600}
+.loc{margin-top:18px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--dim);letter-spacing:.3px}
+.btnrow{margin-top:28px}
+.btn{display:inline-block;padding:11px 22px;border:1px solid var(--ink);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.5px;transition:all .18s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.ghost{border-color:var(--line);color:var(--dim)}
+.btn.ghost:hover{background:var(--panel);color:var(--ink)}
+.ticker{margin-top:64px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.tick{padding:22px 24px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tick .tn{font-family:"Archivo",sans-serif;font-size:32px;font-weight:800;color:var(--acc);letter-spacing:-1px}
+.tick .tl{font-size:13px;color:var(--dim);margin-top:4px;line-height:1.5}
+.sec{padding:96px 0 0}
+.shead{display:flex;align-items:baseline;gap:18px;margin-bottom:40px}
+.sidx{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--acc);letter-spacing:1px}
+.stitle{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(28px,4vw,38px);margin:0;line-height:1.1;letter-spacing:-1px}
+.srule{flex:1;height:1px;background:var(--line);align-self:center}
+.aboutgrid{display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:start}
+.abouttext{font-size:17px;color:var(--dim);margin:0;line-height:1.75}
+.abouttext b{color:var(--ink);font-weight:600}
+.quote{font-family:"IBM Plex Serif",serif;font-style:italic;font-size:22px;line-height:1.5;color:var(--ink);border-left:3px solid var(--acc);padding-left:24px;margin:0}
+.quote .qsrc{display:block;font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:11.5px;color:var(--dim);margin-top:14px;letter-spacing:1px}
+.openrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.oi{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 24px;background:var(--panel);transition:background .18s}
+.oi:hover{background:#f7f4ec}
+.oik{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--acc);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.oiv{font-size:14.5px;color:var(--dim);line-height:1.6}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.case{background:var(--paper);padding:32px;display:flex;flex-direction:column;transition:background .18s}
+.case:hover{background:var(--panel)}
+.cnum{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);letter-spacing:1px;margin-bottom:16px}
+.ctitle{font-family:"Archivo",sans-serif;font-weight:700;font-size:21px;margin:0 0 4px;line-height:1.2;letter-spacing:-.3px}
+.cwhere{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--acc);letter-spacing:.5px;margin-bottom:14px}
+.ctext{font-size:14.5px;color:var(--dim);margin:0;flex:1;line-height:1.65}
+.ctags{margin-top:18px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--blue);letter-spacing:.3px}
+.reponote{font-size:14.5px;color:var(--dim);margin:-18px 0 32px}
+.repolist{border-top:1px solid var(--line)}
+.rrow{display:grid;grid-template-columns:220px 1fr auto;gap:24px;align-items:baseline;padding:20px 8px;border-bottom:1px solid var(--line);transition:background .18s;color:var(--ink)}
+.rrow:hover{background:var(--panel);color:var(--ink)}
+.rname{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;color:var(--blue)}
+.rdesc{font-size:14px;color:var(--dim);margin:0}
+.rmeta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--dim);white-space:nowrap}
+.fallback{display:none;border:1px dashed var(--line);background:var(--panel);padding:24px;font-size:14.5px;color:var(--dim)}
+.skgrid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.sk{display:grid;grid-template-columns:180px 1fr;gap:20px;padding:18px 8px;border-bottom:1px solid var(--line);align-items:baseline}
+.skk{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--acc);letter-spacing:1px;text-transform:uppercase}
+.skv{font-size:14.5px;color:var(--dim);line-height:1.6}
+.foot{margin-top:110px;border-top:1px solid var(--line);padding:72px 0 80px}
+.fbig{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(34px,5vw,52px);line-height:1.05;margin:0 0 18px;letter-spacing:-1.5px}
+.fbig a{color:var(--acc)}
+.fbig a:hover{color:var(--ink)}
+.fsub{color:var(--dim);font-size:15px}
+.fmeta{margin-top:28px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);letter-spacing:.5px}
+.rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.32s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.modebtn{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);background:none;border:1px solid var(--line);padding:5px 12px;cursor:pointer;letter-spacing:.5px;transition:all .18s}
+.modebtn:hover{color:var(--acc);border-color:var(--acc)}
+.darkbody{--paper:#171511;--panel:#211e18;--line:#37332a;--ink:#eae6da;--dim:#9c968a;--acc:#e25b36;--blue:#8ba0ee}
+.darkbody .nav{background:rgba(23,21,17,.88)}
+.darkbody .oi:hover{background:#262219}
+@media (max-width:820px){.aboutgrid{grid-template-columns:1fr}.cases{grid-template-columns:1fr}.skgrid{grid-template-columns:1fr}.rrow{grid-template-columns:1fr;gap:6px}}
 </style>
 </head>
-<body>
+<body id="top">
 
-<header>
-  <div class="wrap">
-    <div class="hello mono">hi, my name is</div>
-    <h1>Endre Lázár.</h1>
-    <p class="tag">I build <b>AI/ML &amp; data solutions</b> and drive <b>large-scale platform migrations</b> — from banking infrastructure at Morgan Stanley to a 500,000-device network platform at Swisscom.</p>
-    <div class="loc">📍 Siebnen SZ, Switzerland &nbsp;·&nbsp; Software Engineer &amp; Security Champion @ Swisscom</div>
-    <div class="links">
-      <a class="btn" href="https://github.com/kacsa007" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn" href="https://www.linkedin.com/in/lendre94/" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a class="btn alt" href="mailto:endre.lazar@yahoo.com">endre.lazar@yahoo.com</a>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="n">500k+</div><div class="l">devices in the platform migration I architect</div></div>
-      <div class="stat"><div class="n">2M+</div><div class="l">events/day across monitoring pipelines</div></div>
-      <div class="stat"><div class="n">$9T</div><div class="l">trade-finance market served by AI models I trained</div></div>
-      <div class="stat"><div class="n">50+</div><div class="l">STEM students mentored</div></div>
-    </div>
-  </div>
-</header>
+<nav class="nav"><div class="wrap fx ac jb navin"><a class="brand" href="#top">endre.lázár</a><div class="fx ac gap24"><a class="navlink" href="#about">01 about</a><a class="navlink" href="#next">02 next</a><a class="navlink" href="#work">03 work</a><a class="navlink" href="#repos">04 code</a><a class="navlink" href="#skills">05 skills</a><a class="navlink" href="#contact">06 contact</a><button class="modebtn" id="modebtn">☾ dark</button></div></div></nav>
 
-<section id="about">
-  <div class="wrap">
-    <h2>about</h2>
-    <p style="max-width:760px;color:var(--dim)">Software engineer with 8+ years across telecommunications, banking, and enterprise software. I combine hands-on engineering — Python, Java, cloud-native stacks — with production AI/ML: predictive models for bandwidth forecasting and anomaly detection, document AI for trade finance, and GenAI/LLM tooling woven into everyday team workflows. As Security Champion I keep quality honest through threat modeling and architecture reviews. I believe leadership is a practice, not a length of service — I mentor, unblock, and set technical direction I can defend at the whiteboard.</p>
-    <div class="quote">"Failure is part of the journey. Every challenge is an opportunity to stand up, rethink, and start again."</div>
-  </div>
-</section>
+<div class="hero">
+<div class="gridbg"></div>
+<div class="wrap heroin">
+<div class="kicker rise">hi, my name is</div>
+<h1 class="name rise d1">Endre <em>Lázár.</em></h1>
+<p class="tagline rise d2">I build <b>AI/ML &amp; data solutions</b> and drive <b>large-scale platform migrations</b> — from banking infrastructure at Morgan Stanley to a 500,000-device network platform at Swisscom.</p>
+<div class="loc rise d2">Siebnen SZ, Switzerland · Software Engineer &amp; Security Champion @ Swisscom</div>
+<div class="fx wrapf gap12 btnrow rise d3"><a class="btn" href="https://github.com/kacsa007" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/lendre94/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="Endre-Lazar-CV.pdf" download="Endre-Lazar-CV.pdf">Download CV ↓</a><a class="btn ghost" href="mailto:endre.lazar@yahoo.com">endre.lazar@yahoo.com</a></div>
+</div>
+<div class="wrap rise d4"><div class="ticker">
+<div class="tick"><div class="tn">500k+</div><div class="tl">devices in the platform migration I architect</div></div>
+<div class="tick"><div class="tn">2M+</div><div class="tl">events/day across monitoring pipelines</div></div>
+<div class="tick"><div class="tn">$9T</div><div class="tl">trade-finance market served by AI models I trained</div></div>
+<div class="tick"><div class="tn">50+</div><div class="tl">STEM students mentored</div></div>
+</div></div>
+</div>
 
-<section id="work">
-  <div class="wrap">
-    <h2>case studies</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Cisco PCA Platform Migration</h3>
-        <div class="where">Swisscom · 2022 – present</div>
-        <p>Driving the end-to-end migration of monitoring infrastructure from VMware Smarts &amp; Watch4net to Cisco PCA across ~500k devices — redesigning data pipelines, alerting architecture, and integration patterns, with BluePlanet RDC for automated resource discovery. Product owner for stakeholder-facing workstreams serving Swiss enterprises and banks.</p>
-        <div class="chips"><span class="chip">architecture</span><span class="chip">python</span><span class="chip">kubernetes</span><span class="chip">spring-boot</span><span class="chip">product-ownership</span></div>
-      </div>
-      <div class="card">
-        <h3>Predictive Network Analytics</h3>
-        <div class="where">Swisscom · 2022 – present</div>
-        <p>Production ML for time-series bandwidth forecasting, anomaly detection, and capacity planning over 2M+ daily events. Statistical reporting products designed with — and for — enterprise clients. GenAI/LLM adoption across the team: automated code review, intelligent log analysis, threat detection.</p>
-        <div class="chips"><span class="chip">scikit-learn</span><span class="chip">time-series</span><span class="chip">genai/llm</span><span class="chip">data-pipelines</span></div>
-      </div>
-      <div class="card">
-        <h3>Document AI for Trade Finance</h3>
-        <div class="where">Traydstream · 2020 (contract)</div>
-        <p>Helped shape the OCR algorithm of an AI platform automating document processing in the $9 trillion trade-finance market — training models for various contract types and guiding parser design across document classes. Greenfield fintech, built from the ground up.</p>
-        <div class="chips"><span class="chip">ocr</span><span class="chip">model-training</span><span class="chip">python</span><span class="chip">fintech</span></div>
-      </div>
-      <div class="card">
-        <h3>Quant-Dev Data &amp; Pipelines</h3>
-        <div class="where">Morgan Stanley · 2018 – 2020</div>
-        <p>Built data-science and pipeline solutions shaping MS infrastructure — ML for indexing unstructured data, a Splunk dashboard monitoring ~70k devices, operational trend models. Later moved via internal mobility into trading-focused teams. Led the Certification Automation Tool project.</p>
-        <div class="chips"><span class="chip">splunk-ml</span><span class="chip">kdb</span><span class="chip">flask</span><span class="chip">banking</span></div>
-      </div>
-      <div class="card">
-        <h3>CI/CD at Manufacturing Scale</h3>
-        <div class="where">Leica Geosystems (Hexagon) · 2021</div>
-        <p>Redesigned the firm-wide licensing team's pipeline with dev/QA/prod segregation: deployments −30%, builds −60%, release time from 2 hours to 49 minutes. Cross-platform build automation for iOS, Android, Windows, and Linux.</p>
-        <div class="chips"><span class="chip">ci/cd</span><span class="chip">devops</span><span class="chip">.net</span><span class="chip">c++</span></div>
-      </div>
-      <div class="card">
-        <h3>Smart Parking Venture</h3>
-        <div class="where">Side venture · Switzerland</div>
-        <p>Designed a parking solution using image recognition and automation to simplify parking in Swiss cities. It didn't find investors or government backing — and it taught me more about product, persistence, and starting again than any success has.</p>
-        <div class="chips"><span class="chip">computer-vision</span><span class="chip">entrepreneurship</span><span class="chip">lessons-learned</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="sec" id="about"><div class="wrap">
+<div class="shead"><span class="sidx">01</span><h2 class="stitle">About</h2><div class="srule"></div></div>
+<div class="aboutgrid">
+<p class="abouttext">Software engineer with 8+ years across telecommunications, banking, and enterprise software. I combine hands-on engineering — Python, Java, cloud-native stacks — with production AI/ML: predictive models for bandwidth forecasting and anomaly detection, document AI for trade finance, and GenAI/LLM tooling woven into everyday team workflows. As Security Champion I keep quality honest through threat modeling and architecture reviews. I believe <b>leadership is a practice, not a length of service</b> — I mentor, unblock, and set technical direction I can defend at the whiteboard.</p>
+<blockquote class="quote">"Failure is part of the journey. Every challenge is an opportunity to stand up, rethink, and start again."<span class="qsrc">— a lesson from a failed venture</span></blockquote>
+</div>
+</div></div>
 
-<section id="repos">
-  <div class="wrap">
-    <h2>github repositories</h2>
-    <p class="repos-note">Pulled live from <a href="https://github.com/kacsa007" target="_blank" rel="noopener">github.com/kacsa007</a> — always current.</p>
-    <div class="grid" id="repo-grid"></div>
-    <div id="repo-fallback">Couldn't reach the GitHub API right now — browse my repositories directly at <a href="https://github.com/kacsa007?tab=repositories" target="_blank" rel="noopener">github.com/kacsa007</a>.</div>
-  </div>
-</section>
+<div class="sec" id="next"><div class="wrap">
+<div class="shead"><span class="sidx">02</span><h2 class="stitle">Open to what's next</h2><div class="srule"></div></div>
+<div class="openrow">
+<div class="oi"><div class="oik">Team leadership</div><div class="oiv">Leading engineering teams in banking &amp; finance — where I've already built, shipped, and mentored.</div></div>
+<div class="oi"><div class="oik">Quant development</div><div class="oiv">Markets, trading algorithms, and data at speed — building on KDB and pipeline work at Morgan Stanley.</div></div>
+<div class="oi"><div class="oik">LLMs &amp; applied AI</div><div class="oiv">Production GenAI: document intelligence, forecasting, and LLM tooling teams actually use.</div></div>
+<div class="oi"><div class="oik">Math &amp; statistics</div><div class="oiv">Time-series, anomaly detection, statistical modeling — the quantitative core behind everything above.</div></div>
+</div>
+</div></div>
 
-<section id="skills">
-  <div class="wrap">
-    <h2>skills</h2>
-    <div class="skills">
-      <div class="skill"><div class="k">languages</div><div class="v">Python · Java · C++ · JavaScript · Kotlin · C# · SQL</div></div>
-      <div class="skill"><div class="k">ai / ml</div><div class="v">PyTorch · scikit-learn · NumPy · Pandas · LLMs &amp; GenAI · Splunk ML · data pipelines</div></div>
-      <div class="skill"><div class="k">devops &amp; cloud</div><div class="v">Docker · Kubernetes · AWS · Azure · OpenShift · Ansible · CI/CD (Jenkins, GitLab, Bitbucket)</div></div>
-      <div class="skill"><div class="k">frameworks</div><div class="v">Spring Boot · Flask · Django · Angular · Node.js</div></div>
-      <div class="skill"><div class="k">data</div><div class="v">SQL · KDB · MongoDB · MariaDB · statistical methods · data modeling · reporting</div></div>
-      <div class="skill"><div class="k">security</div><div class="v">Threat modeling · vulnerability assessment · penetration testing · architecture review</div></div>
-      <div class="skill"><div class="k">emerging</div><div class="v">Blockchain · DeFi · Web3 · real-world asset tokenization</div></div>
-      <div class="skill"><div class="k">human languages</div><div class="v">EN, HU, RO (native) · DE (advanced) · ES (intermediate) · IT, FR (beginner)</div></div>
-    </div>
-  </div>
-</section>
+<div class="sec" id="work"><div class="wrap">
+<div class="shead"><span class="sidx">03</span><h2 class="stitle">Case studies</h2><div class="srule"></div></div>
+<div class="cases">
+<div class="case"><div class="cnum">/01</div><h3 class="ctitle">Cisco PCA Platform Migration</h3><div class="cwhere">Swisscom · 2022 – present</div><p class="ctext">Driving the end-to-end migration of monitoring infrastructure from VMware Smarts &amp; Watch4net to Cisco PCA across ~500k devices — redesigning data pipelines, alerting architecture, and integration patterns, with BluePlanet RDC for automated resource discovery. Product owner for stakeholder-facing workstreams serving Swiss enterprises and banks.</p><div class="ctags">architecture · python · kubernetes · spring-boot · product-ownership</div></div>
+<div class="case"><div class="cnum">/02</div><h3 class="ctitle">Predictive Network Analytics</h3><div class="cwhere">Swisscom · 2022 – present</div><p class="ctext">Production ML for time-series bandwidth forecasting, anomaly detection, and capacity planning over 2M+ daily events. Statistical reporting products designed with — and for — enterprise clients. GenAI/LLM adoption across the team: automated code review, intelligent log analysis, threat detection.</p><div class="ctags">scikit-learn · time-series · genai/llm · data-pipelines</div></div>
+<div class="case"><div class="cnum">/03</div><h3 class="ctitle">Document AI for Trade Finance</h3><div class="cwhere">Traydstream · 2020 (contract)</div><p class="ctext">Helped shape the OCR algorithm of an AI platform automating document processing in the $9 trillion trade-finance market — training models for various contract types and guiding parser design across document classes. Greenfield fintech, built from the ground up.</p><div class="ctags">ocr · model-training · python · fintech</div></div>
+<div class="case"><div class="cnum">/04</div><h3 class="ctitle">Quant-Dev Data &amp; Pipelines</h3><div class="cwhere">Morgan Stanley · 2018 – 2020</div><p class="ctext">Built data-science and pipeline solutions shaping MS infrastructure — ML for indexing unstructured data, a Splunk dashboard monitoring ~70k devices, operational trend models. Later moved via internal mobility into trading-focused teams. Led the Certification Automation Tool project.</p><div class="ctags">splunk-ml · kdb · flask · banking</div></div>
+<div class="case"><div class="cnum">/05</div><h3 class="ctitle">CI/CD at Manufacturing Scale</h3><div class="cwhere">Leica Geosystems (Hexagon) · 2021</div><p class="ctext">Redesigned the firm-wide licensing team's pipeline with dev/QA/prod segregation: deployments −30%, builds −60%, release time from 2 hours to 49 minutes. Cross-platform build automation for iOS, Android, Windows, and Linux.</p><div class="ctags">ci/cd · devops · .net · c++</div></div>
+<div class="case"><div class="cnum">/06</div><h3 class="ctitle">Smart Parking Venture</h3><div class="cwhere">Side venture · Switzerland</div><p class="ctext">Designed a parking solution using image recognition and automation to simplify parking in Swiss cities. It didn't find investors or government backing — and it taught me more about product, persistence, and starting again than any success has.</p><div class="ctags">computer-vision · entrepreneurship · lessons-learned</div></div>
+</div>
+</div></div>
 
-<footer>
-  <div class="wrap">
-    <div class="big">Let's build something. <a href="mailto:endre.lazar@yahoo.com">endre.lazar@yahoo.com</a></div>
-    <div>Based in Siebnen SZ, Switzerland · open to Zurich, Baden &amp; remote-friendly roles</div>
-    <div class="langs mono">© <span id="yr"></span> Endre Lázár · built as a single HTML file, hosted on GitHub Pages</div>
-  </div>
-</footer>
+<div class="sec" id="repos"><div class="wrap">
+<div class="shead"><span class="sidx">04</span><h2 class="stitle">Code</h2><div class="srule"></div></div>
+<p class="reponote">Pulled live from <a class="acc" href="https://github.com/kacsa007" target="_blank" rel="noopener">github.com/kacsa007</a> — always current.</p>
+<div class="repolist" id="repo-list"></div>
+<div class="fallback" id="repo-fallback">Couldn't reach the GitHub API right now — browse my repositories directly at <a class="acc" href="https://github.com/kacsa007?tab=repositories" target="_blank" rel="noopener">github.com/kacsa007</a>.</div>
+</div></div>
+
+<div class="sec" id="skills"><div class="wrap">
+<div class="shead"><span class="sidx">05</span><h2 class="stitle">Skills</h2><div class="srule"></div></div>
+<div class="skgrid">
+<div class="sk"><span class="skk">languages</span><span class="skv">Python · Java · C++ · JavaScript · Kotlin · C# · SQL</span></div>
+<div class="sk"><span class="skk">ai / ml</span><span class="skv">PyTorch · scikit-learn · NumPy · Pandas · LLMs &amp; GenAI · Splunk ML · data pipelines</span></div>
+<div class="sk"><span class="skk">devops &amp; cloud</span><span class="skv">Docker · Kubernetes · AWS · Azure · OpenShift · Ansible · CI/CD (Jenkins, GitLab, Bitbucket)</span></div>
+<div class="sk"><span class="skk">frameworks</span><span class="skv">Spring Boot · Flask · Django · Angular · Node.js</span></div>
+<div class="sk"><span class="skk">data</span><span class="skv">SQL · KDB · MongoDB · MariaDB · statistical methods · data modeling · reporting</span></div>
+<div class="sk"><span class="skk">security</span><span class="skv">Threat modeling · vulnerability assessment · penetration testing · architecture review</span></div>
+<div class="sk"><span class="skk">emerging</span><span class="skv">Blockchain · DeFi · Web3 · real-world asset tokenization</span></div>
+<div class="sk"><span class="skk">human languages</span><span class="skv">EN, HU, RO (native) · DE (advanced) · ES (intermediate) · IT, FR (beginner)</span></div>
+</div>
+</div></div>
+
+<footer class="foot" id="contact"><div class="wrap">
+<h2 class="fbig">Let's build something. <a href="mailto:endre.lazar@yahoo.com">Say hello.</a></h2>
+<div class="fsub">Based in Siebnen SZ, Switzerland · open to Zurich, Baden &amp; remote-friendly roles</div>
+<div class="fmeta">© <span id="yr"></span> Endre Lázár · built as a single HTML file, hosted on GitHub Pages</div>
+</div></footer>
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
-
+const modeBtn = document.getElementById('modebtn');
+function applyDark(dark) {
+  document.body.classList.toggle('darkbody', dark);
+  modeBtn.textContent = dark ? '☀ light' : '☾ dark';
+}
+let darkMode = localStorage.getItem('portfolio-dark') === '1';
+applyDark(darkMode);
+modeBtn.addEventListener('click', () => {
+  darkMode = !darkMode;
+  localStorage.setItem('portfolio-dark', darkMode ? '1' : '0');
+  applyDark(darkMode);
+});
 (async function loadRepos() {
-  const grid = document.getElementById('repo-grid');
+  const list = document.getElementById('repo-list');
   const fallback = document.getElementById('repo-fallback');
   try {
     const res = await fetch('https://api.github.com/users/kacsa007/repos?sort=updated&per_page=12');
@@ -190,24 +198,18 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     repos = repos.filter(r => !r.fork);
     if (!repos.length) throw new Error('no repos');
     for (const r of repos) {
-      const card = document.createElement('a');
-      card.className = 'card repo';
-      card.href = r.html_url; card.target = '_blank'; card.rel = 'noopener';
-      card.style.color = 'inherit';
+      const row = document.createElement('a');
+      row.className = 'rrow';
+      row.href = r.html_url; row.target = '_blank'; row.rel = 'noopener';
       const updated = new Date(r.pushed_at).toLocaleDateString('en-GB', { year: 'numeric', month: 'short' });
-      card.innerHTML =
-        '<h3>' + r.name + '</h3>' +
-        '<p>' + (r.description ? r.description : 'No description yet — click through to explore the code.') + '</p>' +
-        '<div class="meta">' +
-          (r.language ? '<span class="lang">' + r.language + '</span>' : '') +
-          '<span>★ ' + r.stargazers_count + '</span>' +
-          '<span>updated ' + updated + '</span>' +
-        '</div>';
-      grid.appendChild(card);
+      const name = document.createElement('span'); name.className = 'rname'; name.textContent = r.name;
+      const desc = document.createElement('p'); desc.className = 'rdesc'; desc.textContent = r.description || 'No description yet — click through to explore the code.';
+      const meta = document.createElement('span'); meta.className = 'rmeta';
+      meta.textContent = (r.language ? r.language + ' · ' : '') + '★ ' + r.stargazers_count + ' · updated ' + updated;
+      row.append(name, desc, meta);
+      list.appendChild(row);
     }
-  } catch (e) {
-    fallback.style.display = 'block';
-  }
+  } catch (e) { fallback.style.display = 'block'; }
 })();
 </script>
 
