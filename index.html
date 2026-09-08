@@ -1,281 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Endre Lázár — Software Engineer · AI/ML, Data & Platform Migrations</title>
-<meta name="description" content="Endre Lázár — software engineer in Switzerland. AI/ML & data solutions, large-scale platform migrations, banking & trade-finance systems. Swisscom, Morgan Stanley, Leica Geosystems, Traydstream.">
-<meta property="og:title" content="Endre Lázár — Software Engineer">
-<meta property="og:description" content="AI/ML & data solutions · platform migrations · banking & trade-finance systems · Switzerland">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital@1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- GoatCounter analytics: sign up free at goatcounter.com and register the code "kacsa007" (or change it below to whatever code you picked) -->
-<script data-goatcounter="https://kacsa007.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Five-Star Machine — Allianz on Google, DE &amp; CH</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
 <style>
-:root{--paper:#f1eee7;--panel:#e8e4d9;--line:#d4cfc0;--ink:#1d1c19;--dim:#6d695d;--acc:#c5391f;--blue:#2c50c8}
-*{box-sizing:border-box}
+:root{
+  --bg:#f7f6f3; --card:#ffffff; --ink:#191919; --muted:#6d6d72; --line:#e5e2da;
+  --blue:#37536d; --orange:#c96f33; --red:#a93f3b; --green:#54805c; --gold:#bd9a2f; --grey:#98989e;
+  --radius:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 "IBM Plex Sans",sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--ink);text-decoration:none}
-a:hover{color:var(--acc)}
-.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
-.acc{color:var(--acc)}
-.fx{display:flex}.ac{align-items:center}.jb{justify-content:space-between}.gap12{gap:12px}.gap24{gap:24px}.wrapf{flex-wrap:wrap}
-.nav{position:sticky;top:0;z-index:50;background:rgba(241,238,231,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.navin{height:60px}
-.brand{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:1px;color:var(--ink)}
-.navlink{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);letter-spacing:.5px}
-.navlink:hover{color:var(--acc)}
-.hero{position:relative;padding:104px 0 0;overflow:hidden}
-.gridbg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.5;-webkit-mask-image:radial-gradient(900px 500px at 30% 0%,#000 0%,transparent 75%);mask-image:radial-gradient(900px 500px at 30% 0%,#000 0%,transparent 75%);pointer-events:none}
-.heroin{position:relative}
-.kicker{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--acc);letter-spacing:2px}
-.name{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(50px,8.5vw,94px);line-height:.98;margin:16px 0 22px;letter-spacing:-2.5px}
-.name em{font-style:normal;color:var(--acc)}
-.tagline{font-size:clamp(17px,2.2vw,20px);color:var(--dim);max-width:660px;margin:0}
-.tagline b{color:var(--ink);font-weight:600}
-.loc{margin-top:18px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--dim);letter-spacing:.3px}
-.btnrow{margin-top:28px}
-.btn{display:inline-block;padding:11px 22px;border:1px solid var(--ink);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.5px;transition:all .18s}
-.btn:hover{background:var(--ink);color:var(--paper)}
-.btn.ghost{border-color:var(--line);color:var(--dim)}
-.btn.ghost:hover{background:var(--panel);color:var(--ink)}
-.ticker{margin-top:64px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.tick{padding:22px 24px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.tick .tn{font-family:"Archivo",sans-serif;font-size:32px;font-weight:800;color:var(--acc);letter-spacing:-1px}
-.tick .tl{font-size:13px;color:var(--dim);margin-top:4px;line-height:1.5}
-.sec{padding:96px 0 0}
-.shead{display:flex;align-items:baseline;gap:18px;margin-bottom:40px}
-.sidx{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--acc);letter-spacing:1px}
-.stitle{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(28px,4vw,38px);margin:0;line-height:1.1;letter-spacing:-1px}
-.srule{flex:1;height:1px;background:var(--line);align-self:center}
-.aboutgrid{display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:start}
-.abouttext{font-size:17px;color:var(--dim);margin:0;line-height:1.75}
-.abouttext b{color:var(--ink);font-weight:600}
-.quote{font-family:"IBM Plex Serif",serif;font-style:italic;font-size:22px;line-height:1.5;color:var(--ink);border-left:3px solid var(--acc);padding-left:24px;margin:0}
-.quote .qsrc{display:block;font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:11.5px;color:var(--dim);margin-top:14px;letter-spacing:1px}
-.openrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.oi{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 24px;background:var(--panel);transition:background .18s}
-.oi:hover{background:#f7f4ec}
-.oik{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--acc);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
-.oiv{font-size:14.5px;color:var(--dim);line-height:1.6}
-.cases{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
-.case{background:var(--paper);padding:32px;display:flex;flex-direction:column;transition:background .18s}
-.case:hover{background:var(--panel)}
-.cnum{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);letter-spacing:1px;margin-bottom:16px}
-.ctitle{font-family:"Archivo",sans-serif;font-weight:700;font-size:21px;margin:0 0 4px;line-height:1.2;letter-spacing:-.3px}
-.cwhere{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--acc);letter-spacing:.5px;margin-bottom:14px}
-.ctext{font-size:14.5px;color:var(--dim);margin:0;flex:1;line-height:1.65}
-.ctags{margin-top:18px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--blue);letter-spacing:.3px}
-.reponote{font-size:14.5px;color:var(--dim);margin:-18px 0 32px}
-.repolist{border-top:1px solid var(--line)}
-.rrow{display:grid;grid-template-columns:220px 1fr auto;gap:24px;align-items:baseline;padding:20px 8px;border-bottom:1px solid var(--line);transition:background .18s;color:var(--ink)}
-.rrow:hover{background:var(--panel);color:var(--ink)}
-.rname{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;color:var(--blue)}
-.rdesc{font-size:14px;color:var(--dim);margin:0}
-.rmeta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--dim);white-space:nowrap}
-.fallback{display:none;border:1px dashed var(--line);background:var(--panel);padding:24px;font-size:14.5px;color:var(--dim)}
-.skgrid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
-.sk{display:grid;grid-template-columns:180px 1fr;gap:20px;padding:18px 8px;border-bottom:1px solid var(--line);align-items:baseline}
-.skk{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--acc);letter-spacing:1px;text-transform:uppercase}
-.skv{font-size:14.5px;color:var(--dim);line-height:1.6}
-.foot{margin-top:110px;border-top:1px solid var(--line);padding:72px 0 80px}
-.fbig{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(34px,5vw,52px);line-height:1.05;margin:0 0 18px;letter-spacing:-1.5px}
-.fbig a{color:var(--acc)}
-.fbig a:hover{color:var(--ink)}
-.fsub{color:var(--dim);font-size:15px}
-.fmeta{margin-top:28px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);letter-spacing:.5px}
-.rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
-.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.32s}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.catbox{border:1px solid var(--line);background:var(--panel);padding:10px}
-.catimg{display:block;width:100%;height:260px;object-fit:cover;border-radius:4px}
-.catcap{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;margin-top:10px;text-align:center}
-.langchart{margin-top:48px}
-.lctitle{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--acc);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
-.lcnote{font-size:13px;color:var(--dim);margin:0 0 20px}
-.lrow{display:grid;grid-template-columns:130px 1fr 56px;gap:14px;align-items:center;padding:7px 0}
-.lname{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink)}
-.ltrack{height:14px;background:var(--panel);border:1px solid var(--line)}
-.lbar{height:100%;background:var(--acc);transition:width .8s cubic-bezier(.2,.7,.2,1)}
-.lval{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--dim);text-align:right}
-.modebtn{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);background:none;border:1px solid var(--line);padding:5px 12px;cursor:pointer;letter-spacing:.5px;transition:all .18s}
-.modebtn:hover{color:var(--acc);border-color:var(--acc)}
-.darkbody{--paper:#171511;--panel:#211e18;--line:#37332a;--ink:#eae6da;--dim:#9c968a;--acc:#e25b36;--blue:#8ba0ee}
-.darkbody .nav{background:rgba(23,21,17,.88)}
-.darkbody .oi:hover{background:#262219}
-@media (max-width:820px){.aboutgrid{grid-template-columns:1fr}.cases{grid-template-columns:1fr}.skgrid{grid-template-columns:1fr}.rrow{grid-template-columns:1fr;gap:6px}}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink);line-height:1.62;font-size:17px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 80px}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.masthead{padding:60px 0 4px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(34px,5.5vw,52px);line-height:1.08;font-weight:700;letter-spacing:-.5px;margin-bottom:16px}
+.standfirst{font-size:19.5px;line-height:1.55;color:#39393d;max-width:820px;margin-bottom:20px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 24px}
+.chip{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:12px;background:#edebe4;border:1px solid var(--line);border-radius:99px;padding:4px 12px;color:#46464c}
+.toc{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13.5px;color:#55555a;border-bottom:1px solid var(--line);padding:14px 0 18px;margin-bottom:8px;line-height:2}
+.toc a{color:#37536d;text-decoration:none;white-space:nowrap;margin-right:14px}
+.toc a:hover{text-decoration:underline}
+section{margin-top:60px}
+.sec-num{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+h2{font-size:clamp(23px,3.2vw,31px);line-height:1.16;margin-bottom:16px;letter-spacing:-.3px}
+h3{font-size:18.5px;margin:26px 0 10px}
+p{margin-bottom:15px;max-width:750px}
+a{color:var(--blue)}
+.small{font-size:13.5px;color:var(--muted)}
+sup.ref{font-size:10.5px;line-height:0}
+sup.ref a{text-decoration:none;color:var(--orange);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-weight:700}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px;margin:26px 0 6px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px}
+.kpi .v{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:26px;font-weight:800;letter-spacing:-.5px}
+.kpi .l{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11.5px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-top:3px;line-height:1.35}
+.kpi.de{border-top:3px solid var(--blue)} .kpi.ch{border-top:3px solid var(--red)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:20px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.card h4{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:700;margin-bottom:2px}
+.card .sub{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:13px}
+.chart-tall{height:330px;position:relative}.chart-mid{height:280px;position:relative}.chart-short{height:225px;position:relative}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:12px}
+.toggle button{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;padding:6px 16px;border:none;background:var(--card);cursor:pointer;color:var(--muted);font-weight:600}
+.toggle button.on{background:var(--ink);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.chips button{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:12.5px;padding:5px 13px;border-radius:99px;border:1px solid var(--line);background:var(--card);cursor:pointer;color:#46464c;font-weight:600}
+.chips button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:820px){.quote-grid{grid-template-columns:1fr}}
+.quote{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:8px;padding:15px 17px}
+.quote.q-de-mkt{border-left-color:var(--blue)}
+.quote .orig{font-style:italic;font-size:15px;margin-bottom:9px}
+.quote .trans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13.5px;color:#4c4c52;border-top:1px dashed var(--line);padding-top:8px;margin-bottom:9px}
+.quote .who{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11.5px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+/* exhibits */
+.exhibit{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin:26px 0;overflow:hidden}
+.exhibit .ex-head{background:#20242c;color:#fff;padding:14px 22px;display:flex;align-items:baseline;gap:14px}
+.exhibit .ex-head .tag-ex{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;font-weight:800;letter-spacing:1.5px;background:var(--orange);color:#fff;border-radius:4px;padding:3px 9px;text-transform:uppercase;flex:none}
+.exhibit .ex-head h3{font-size:18px;margin:0;color:#fff}
+.exhibit .ex-body{padding:20px 22px}
+.exhibit .ex-body p{max-width:none}
+.exgrid{display:grid;grid-template-columns:170px 1fr;border-top:1px solid var(--line);font-size:15px}
+.exgrid>div{padding:11px 14px;border-bottom:1px solid #f0eee8}
+.exgrid .k{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11.5px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700;background:#faf9f6}
+@media(max-width:640px){.exgrid{grid-template-columns:1fr}.exgrid .k{padding-bottom:2px;border-bottom:none}}
+.factbox{background:#fbfaf7;border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin:20px 0}
+.factbox h4{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:10px}
+.factbox ul{list-style:none}
+.factbox li{padding:8px 0;border-bottom:1px solid #efece5;font-size:15.5px}
+.factbox li:last-child{border-bottom:none}
+.tag{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-right:8px;vertical-align:1px}
+.tag.illegal{background:#f4dcdb;color:#8c2f2c}.tag.legal{background:#dfe9de;color:#3e6246}.tag.grey{background:#eceae4;color:#5c5c62}.tag.de-t{background:#dee5ec;color:#33517a}.tag.ch-t{background:#f4dcdb;color:#8c2f2c}.tag.eu-t{background:#e7e2ef;color:#5c4a80}
+.callout{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:12px;margin:18px 0}
+.co{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px}
+.co .big{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:24px;font-weight:800;letter-spacing:-.5px}
+.co .cap{font-size:13px;color:var(--muted);line-height:1.45;margin-top:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.co.warn .big{color:var(--red)}.co.ok .big{color:var(--green)}.co.blue .big{color:var(--blue)}
+table{width:100%;border-collapse:collapse;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13.5px;margin:12px 0}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);padding:8px 10px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #f0eee8;vertical-align:top}
+td.num,th.num{text-align:right}
+.note{border-left:3px solid var(--gold);background:#fbf7e9;padding:13px 17px;border-radius:0 8px 8px 0;margin:18px 0;font-size:15px;max-width:750px}
+.sources{font-size:13px;color:#4c4c52;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.sources ol{margin-left:22px}
+.sources li{margin-bottom:6px;line-height:1.5}
+footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.divider{border:none;border-top:1px solid var(--line);margin:38px 0}
+@media print{.chips,.toggle,.toc{display:none}.card,.factbox,.quote,.exhibit{break-inside:avoid}}
 </style>
 </head>
-<body id="top">
+<body>
+<div class="wrap">
 
-<nav class="nav"><div class="wrap fx ac jb navin"><a class="brand" href="#top">endre.lázár</a><div class="fx ac gap24"><a class="navlink" href="#about">01 about</a><a class="navlink" href="#next">02 next</a><a class="navlink" href="#work">03 work</a><a class="navlink" href="#repos">04 code</a><a class="navlink" href="#skills">05 skills</a><a class="navlink" href="#contact">06 contact</a><button class="modebtn" id="modebtn">☾ dark</button></div></div></nav>
+<header class="masthead">
+  <div class="kicker">Data investigation · Google reviews · Insurance</div>
+  <h1>The Five-Star Machine</h1>
+  <p class="standfirst">A full census of 256,975 Google reviews across every Allianz agency listing in Germany and Switzerland. It shows a rating system that runs on solicitation and, in documented clusters, on agents rating each other — while the complaints that regulators receive keep climbing. Five numbered exhibits, every claim sourced.</p>
+  <div class="meta-chips sans">
+    <span class="chip">246,116 reviews · 7,111 German listings</span>
+    <span class="chip">10,859 reviews · 107 Swiss listings</span>
+    <span class="chip">Census, not a sample</span>
+    <span class="chip">Collected 21 Jul – 8 Aug 2026</span>
+    <span class="chip">Exact timestamps</span>
+  </div>
+</header>
 
-<div class="hero">
-<div class="gridbg"></div>
-<div class="wrap heroin">
-<div class="kicker rise">hi, my name is</div>
-<h1 class="name rise d1">Endre <em>Lázár.</em></h1>
-<p class="tagline rise d2">I build <b>AI/ML &amp; data solutions</b> and drive <b>large-scale platform migrations</b> — from banking infrastructure at Morgan Stanley to a 500,000-device network platform at Swisscom.</p>
-<div class="loc rise d2">Lachen SZ, Switzerland · Software Engineer &amp; Security Champion @ Swisscom</div>
-<div class="fx wrapf gap12 btnrow rise d3"><a class="btn" href="https://github.com/kacsa007" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/lendre94/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="Endre-Lazar-CV.pdf" download="Endre-Lazar-CV.pdf">Download CV ↓</a><a class="btn ghost" href="mailto:endre.lazar@yahoo.com">endre.lazar@yahoo.com</a></div>
+<nav class="toc">
+  <a href="#s1">1 Headline numbers</a><a href="#s2">2 The 2025 surge</a><a href="#s3">3 What stars rate</a><a href="#s4">4 The negative reviews</a><a href="#s5">5 Two kinds of flooding</a><a href="#s6">6 Exhibits A–E</a><a href="#s7">7 The law</a><a href="#s8">8 Where to report</a><a href="#s9">9 The bigger picture</a><a href="#s10">10 Method</a><a href="#src1">Sources</a>
+</nav>
+
+<section id="s1">
+  <div class="sec-num">01 · Headline numbers</div>
+  <h2>On Google, Germany's Allianz agents are nearly flawless</h2>
+  <p>Across all 7,111 German Allianz agency listings, <strong>96.1 percent of ratings are five stars</strong>. 3,660 listings — more than half — hold a perfect rounded 5.0. Negative ratings: 1.6 percent of a quarter million.</p>
+  <p>Switzerland's 107 listings look different: <strong>9.3 percent negative</strong>, and one-star ratings alone (919) outnumber the two-, three- and four-star ratings combined (800). Same company, same decade — a six-fold difference in visible criticism. The sections below take that gap apart.</p>
+  <div class="kpi-row">
+    <div class="kpi de"><div class="v">246,116</div><div class="l">Reviews · Germany</div></div>
+    <div class="kpi de"><div class="v">96.1%</div><div class="l">Five-star · DE</div></div>
+    <div class="kpi de"><div class="v">1.6%</div><div class="l">1–2 star · DE</div></div>
+    <div class="kpi ch"><div class="v">10,859</div><div class="l">Reviews · Switzerland</div></div>
+    <div class="kpi ch"><div class="v">84.2%</div><div class="l">Five-star · CH</div></div>
+    <div class="kpi ch"><div class="v">9.3%</div><div class="l">1–2 star · CH</div></div>
+  </div>
+  <div class="card">
+    <h4>Rating distribution, share of all reviews</h4>
+    <div class="sub">Data: all reviews in both databases. Hover for counts.</div>
+    <div class="chart-mid"><canvas id="chartDist"></canvas></div>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="sec-num">02 · The 2025 surge</div>
+  <h2>Review volume tripled, then tripled again</h2>
+  <p>German Allianz listings collected <strong>24,044 reviews in 2024, 68,416 in 2025, and 73,891 in just the first 220 days of 2026</strong> — an annualized pace of roughly 122,000, five times the 2024 level. November 2025 was the first month above 10,000; most months since have stayed there. Switzerland bent the same way at smaller scale: 902 reviews in 2024, 2,274 in 2025.</p>
+  <p>Word-of-mouth does not behave like this. A doubling-then-doubling curve across thousands of independent listings is what organized solicitation looks like: rate-us links in follow-up mails, QR codes on counters, campaigns pushed through the agent network. Asking for reviews is legal. But from early 2025 the star average of a German Allianz agency stopped being a passive measurement and became a managed number — which matters for anyone using it to pick an insurer.</p>
+  <div class="card">
+    <h4>Monthly review volume, Jan 2017 – Aug 2026</h4>
+    <div class="sub">Germany left axis, Switzerland right. August 2026 is partial (collection ended 8 Aug). Timestamps are exact, not reconstructed from "a year ago" labels.</div>
+    <div class="chart-tall"><canvas id="chartMonthly"></canvas></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h4>Germany, per year</h4><div class="sub">2026 = 1 Jan–8 Aug.</div><div class="chart-short"><canvas id="chartYearDE"></canvas></div></div>
+    <div class="card"><h4>Switzerland, per year</h4><div class="sub">Same bend, ~1/100 the scale.</div><div class="chart-short"><canvas id="chartYearCH"></canvas></div></div>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="sec-num">03 · What the stars rate</div>
+  <h2>Five stars grade the buying. One star grades the paying.</h2>
+  <p>Reading the texts, not just counting them: in Germany <strong>55 percent of five-star texts praise the advisor or the sales consultation</strong>; only 9 percent mention a claim, payout or the word <em>Schaden</em>. Among negative texts, claims and payouts are the dominant substantive topic in both countries — 13 percent in Germany, 26 percent in Switzerland — alongside silence: unanswered mails, unreturned calls.</p>
+  <p>So the two ends of the scale describe different products. The five-star mass rates the pleasant afternoon a policy was sold; the one-star tail rates what happened when money had to flow the other way. An average blending the two mostly measures the first.</p>
+  <div class="card">
+    <h4>Topics in review texts, by rating band</h4>
+    <div class="sub">Share of texts matching each topic. Advisor = Herr/Frau + name, Beratung, conseil. Claims = Schaden*, Leistung*, Unfall*, sinistre, claim. Definitions in section 10.</div>
+    <div class="chart-mid"><canvas id="chartAsym"></canvas></div>
+  </div>
+  <p class="small">Related: 26.8 percent of German five-star ratings and 55.7 percent of Swiss ones carry no text at all — one-tap stars, the typical output of mass solicitation.</p>
+</section>
+
+<section id="s4">
+  <div class="sec-num">04 · The negative reviews</div>
+  <h2>What the critics say, in their own words</h2>
+  <p>Multilingual keyword analysis over every negative text — 2,721 in Germany, 675 in Switzerland after removing one mass-posting profile (section 5). Germany's complaints lead with <strong>silence</strong> (11 percent), then <strong>cancellation disputes</strong> (8 percent). Switzerland's lead with <strong>cancellation by the insurer</strong> (11 percent — frequently after claims were filed, a practice Swiss consumer TV has documented at Allianz Suisse<sup class="ref"><a href="#src38">[38]</a></sup>), then silence, then <strong>denied or reduced claims</strong> (6 percent, about twice the German rate).</p>
+  <div class="card">
+    <h4>Complaint themes in negative reviews</h4>
+    <div class="sub">Share of negative texts matching each theme; a review can match several. Swiss figures exclude the single-author campaign.</div>
+    <div class="toggle" id="themeToggle"><button class="on" data-m="DE">Germany</button><button data-m="CH">Switzerland</button></div>
+    <div class="chart-mid"><canvas id="chartThemes"></canvas></div>
+  </div>
+  <h3>Fourteen voices</h3>
+  <p class="small">Originals as posted, English below. Agency names withheld in this layer (see section 10); every quote is public and reproducible from the dataset. Allegations are the reviewers' own.</p>
+  <div class="chips" id="quoteChips">
+    <button class="on" data-t="all">All</button>
+    <button data-t="denied">Denied / not paid</button>
+    <button data-t="silence">Silence</button>
+    <button data-t="cancelled">Cancelled by insurer</button>
+    <button data-t="accused">Blamed / accused</button>
+    <button data-t="discrim">Discrimination</button>
+    <button data-t="legal">Lawyers &amp; courts</button>
+  </div>
+  <div class="quote-grid" id="quoteGrid"></div>
+  <h3>Discrimination: what the data can and cannot say</h3>
+  <p>Explicit allegations of racism or discrimination appear in <strong>9 of 2,721 German negative texts and 3 of 716 Swiss ones</strong> — individual, unadjudicated accounts, two quoted above. No public statistic measures discrimination in claims handling: neither ombudsman, nor BaFin, nor FINMA publishes complaint breakdowns by discrimination ground or by insurer<sup class="ref"><a href="#src26">[26]</a></sup><sup class="ref"><a href="#src28">[28]</a></sup>. Adjacent evidence exists: Comparis found drivers with Kosovar, North Macedonian or Turkish passports paying up to 74 percent more for Swiss motor cover<sup class="ref"><a href="#src35">[35]</a></sup>, and Germany's anti-discrimination agency documented age-based pricing disadvantages in 2026 testing<sup class="ref"><a href="#src36">[36]</a></sup>. For claims settlement itself, the public record is simply empty — a gap worth naming rather than papering over.</p>
+  <h3>Language of the critics</h3>
+  <p>Review language is not nationality, but it is measurable. In Germany, negative reviews are written in German at nearly the same rate as positive ones, and Arabic-script reviews skew strongly <em>positive</em> (359 positive, 17 negative — clustered at agencies with Arabic-speaking advisors). In Switzerland, <strong>English-language reviews are about twice as frequent among negatives (5.7%) as among positives (2.6%)</strong>; French is mildly overrepresented too. Expat customers appear less happy — or less inhibited about saying so.</p>
+  <div class="card">
+    <h4>Switzerland: language of review texts, negative vs positive</h4>
+    <div class="sub">Texts ≥40 characters, automatic detection, campaign excluded. Small slices carry detection noise.</div>
+    <div class="chart-short"><canvas id="chartLang"></canvas></div>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="sec-num">05 · Two kinds of flooding</div>
+  <h2>A flood of praise and a flood of anger are not the same thing</h2>
+  <p>Both directions of review distortion exist in this dataset. They are not symmetrical, and treating them as equivalent would be a mistake.</p>
+  <p>When <strong>one customer floods negatives</strong>, the act is loud, traceable and self-limiting: it comes from an identifiable profile, it violates Google's locality rule the moment it spreads beyond the place of the actual experience, and a single flagging round removes it. There is no revenue in it. It is, almost by definition, the behaviour of someone who believes ordinary channels have failed — a symptom that a case went badly wrong, whatever the merits underneath.</p>
+  <p>When <strong>praise floods</strong>, the economics reverse. The beneficiary is a business; the authors are many, dispersed and unremarkable one by one; nobody flags flattery, so it survives moderation indefinitely and compounds into the rating that customers, comparison sites and Google's own ranking treat as truth. One is a scream; the other is infrastructure.</p>
+  <p>The dataset makes the asymmetry measurable. Using the definitions in section 10, reviews bearing <em>suspect-positive</em> patterns (landing in a statistical burst week, or written by profiles that rated five or more different Allianz agencies) total <strong>35,114 across both countries — 14.3 percent of all five-star reviews</strong>. Reviews from <em>campaign-negative</em> profiles (negatives spread across three or more listings) total <strong>67</strong>, and 41 of those are one Swiss profile. Five hundred twenty-four to one.</p>
+  <div class="card">
+    <h4>Suspect-positive vs campaign-negative reviews per year, DE + CH combined</h4>
+    <div class="sub">Logarithmic scale — the two phenomena differ by three orders of magnitude. Definitions in section 10; zero years show no marker.</div>
+    <div class="chart-mid"><canvas id="chartTrend"></canvas></div>
+  </div>
+  <h3>The one negative flood in this data — read as a case file</h3>
+  <p>Switzerland, 2026. A customer describes a theft claim (<em>"I've claimed a Diebstahl from my garage already back in November 2025 and there's no update, no transparency since then… If I'm not writing daily mails or at least one per week I'm not getting any help"</em>) and posts a one-star review on the head-office listing in January. Two months of silence later, the same profile pastes a near-identical one-star text — now alleging the insurer is <em>"spreading completely false allegations"</em> against the customer — onto <strong>39 agency listings, almost all within eight March days</strong>, reaching 41 Swiss listings by May. That one profile is 39 of the 56 Swiss negative reviews in March 2026; the monthly chart's apparent reputation collapse is mostly this.</p>
+  <p>The mass-posting violates Google's locality rule and is removable<sup class="ref"><a href="#src14">[14]</a></sup>. But as evidence, its interesting content is the trajectory: claim filed, months of alleged non-response, escalation into the only channel left that anyone reads. That trajectory matches the dominant complaint themes of the Swiss negatives (silence, denial, being treated as the fraudster — section 4), matches what BaFin says drove its 2025 complaint record in Germany (slow claims handling<sup class="ref"><a href="#src29">[29]</a></sup>), and matches the escalation ladder consumer bodies describe. A company that resolves claims does not usually acquire carpet-bombing critics. The flood is the fever, not the disease.</p>
+  <div class="card">
+    <h4>Anatomy of a negative flood: one profile's posts per month</h4>
+    <div class="sub">Underlying claim reportedly filed Nov 2025 (per the review text). First review Jan 2026; mass-posting 10–17 Mar 2026; last copy 6 May 2026.</div>
+    <div class="chart-short"><canvas id="chartEL"></canvas></div>
+  </div>
+  <div class="note">For contrast: no German or Swiss listing in this dataset lost its rating to a negative campaign. The four German campaign-negative profiles together produced 13 reviews in nine years. The suspect-positive volume in 2025 alone was 13,644.</div>
+</section>
+
+<section id="s6">
+  <div class="sec-num">06 · Exhibits</div>
+  <h2>Five patterns, documented</h2>
+  <p>Each exhibit states the pattern, the rule it strains against, and the most plausible origin — including whether the fingerprints point at Allianz's own network or at enthusiastic customers. Verification links lead to the live Google listings. Individuals are identified by initials here; the raw dataset contains the public names. None of this is a court finding; all of it is checkable.</p>
+
+  <div class="exhibit" id="exA">
+    <div class="ex-head"><span class="tag-ex">Exhibit A</span><h3>Agency owners rating each other — 88 reciprocal pairs, 30 on the same day</h3></div>
+    <div class="ex-body">
+      <p>We matched reviewer names against the owner names embedded in Allianz's own listing titles ("Allianz Generalvertretung [Name]"). <strong>376 owner-named reviewer profiles rated two or more <em>other</em> Allianz agencies — 1,459 agency ratings, averaging 4.93.</strong> The sharpest slice: <strong>88 pairs of agency owners who rated each other's agencies</strong>, and in 30 of those pairs the two five-star reviews were posted <strong>on the same day</strong>. Eleven more within 48 hours. Same-day reciprocity is what a "you rate me, I rate you" exchange looks like; coincidence does not schedule itself like that. The pattern also survives the common-name objection: restricted to distinctive surnames only, 62 pairs remain, 27 of them same-day-or-adjacent.</p>
+      <div class="grid2">
+        <div class="card" style="margin:8px 0">
+          <h4>Time between the two halves of each reciprocal pair</h4>
+          <div class="sub">88 pairs. Data: reviewer name = owner name of another listing, both directions present.</div>
+          <div class="chart-short"><canvas id="chartRecip"></canvas></div>
+        </div>
+        <div class="card" style="margin:8px 0">
+          <h4>Example pairs (initials)</h4>
+          <div class="sub">Both directions five stars in every listed pair.</div>
+          <table><thead><tr><th>Pair</th><th class="num">Gap</th><th>Dates</th></tr></thead><tbody id="pairRows"></tbody></table>
+        </div>
+      </div>
+      <div class="exgrid">
+        <div class="k">The pattern</div><div>Tied agents of the same insurer exchanging five-star ratings on each other's public listings, often same-day; one owner's name appears as reviewer on 28 other agencies.</div>
+        <div class="k">Why it matters</div><div>Ratings presented to consumers as customer experience would partly be trade colleagues rating each other. Google prohibits reviewing businesses you have a conflict of interest with<sup class="ref"><a href="#src14">[14]</a></sup>; under UWG, reviews that misrepresent their commercial character can be unfair (§5a) and fake "consumer" endorsements sit on the blacklist (Anhang Nr. 23c)<sup class="ref"><a href="#src1">[1]</a></sup>.</div>
+        <div class="k">Plausible origin</div><div>Allianz's own agent network. Name-identity cannot be proven from outside — but same-day reciprocity across 30 pairs is not a customer behaviour.</div>
+        <div class="k">Verify</div><div>Any listing title of form "Allianz Generalvertretung [Name]" on Google Maps; search the counterpart's name in its review list. Full pair list reproducible from the dataset.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exhibit" id="exB">
+    <div class="ex-head"><span class="tag-ex">Exhibit B</span><h3>Touring five-star profiles — 73 agencies, 38 cities, one reviewer</h3></div>
+    <div class="ex-body">
+      <p>49 reviewer profiles rated ten or more different Allianz agencies, essentially always five stars. The most active rated <strong>73 agencies across 38 cities</strong>. One profile rated <strong>33 agencies within 30 days</strong> in late 2025 — a new agency every 22 hours, spanning most of Germany. These profiles match no owner name; they are also not plausible customers. No private household maintains relationships with 73 Allianz agencies. The candidate explanations left standing: field staff, sales-structure colleagues, trainers, or paid accounts. From outside, the data cannot distinguish between those — it can only rule out the innocent one.</p>
+      <table>
+        <thead><tr><th>Profile</th><th class="num">Agencies</th><th class="num">Cities</th><th class="num">Avg ★</th><th>Active</th><th class="num">Max in 30 days</th></tr></thead>
+        <tbody id="tourRows"></tbody>
+      </table>
+      <p class="small">Supporting pattern: 2,199 German reviews consist of an exact duplicate text used three or more times — "Sehr freundlich und kompetent" appears verbatim on 58 different listings. Generic praise recurs naturally; identical sentences across dozens of listings at this rate do not.</p>
+      <div class="exgrid">
+        <div class="k">The pattern</div><div>A small set of profiles systematically carpeting the agency network with five-star ratings, at rates incompatible with genuine customership.</div>
+        <div class="k">Why it matters</div><div>Each such profile adds dozens of rating points that consumers read as independent experiences. Google's fake-engagement policy prohibits ratings not based on real experience<sup class="ref"><a href="#src14">[14]</a></sup>; commissioned ones would hit UWG Anhang Nr. 23c<sup class="ref"><a href="#src1">[1]</a></sup>.</div>
+        <div class="k">Plausible origin</div><div>Unknown. Consistent with insurer-side actors (staff, structure, hired accounts); inconsistent with ordinary customers. "Someone just loves Allianz this much" fails at 73 agencies in 38 cities.</div>
+        <div class="k">Verify</div><div>Open any high-volume profile from a listing's review list; Google shows the profile's other reviews. The dataset holds profile URLs for all 49.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exhibit" id="exC">
+    <div class="ex-head"><span class="tag-ex">Exhibit C</span><h3>The harvest weekend — 150 reviews in 48 hours at one agency</h3></div>
+    <div class="ex-body">
+      <p>A Bavarian agency's listing<sup class="ref"><a href="#src41">[41]</a></sup> collected <strong>91 reviews on Sunday 13 April 2025 and 59 more on the Monday</strong> — 166 that week, 133 of them without text. The texted ones locate the operation: reviewers thank the agency for the nice chat <em>at the BMW Open</em>, the Munich tennis tournament running that weekend. A booth, a QR code, and a listing whose 4.87 average now rests mostly on one weekend's foot traffic — 214 reviews total, over three-quarters of them from those days. This is the mildest exhibit: real people probably pressed the buttons. It still shows how a "customer rating" can be manufactured wholesale at an event, and if stars were rewarded or selectively encouraged, it crosses from marketing into violation<sup class="ref"><a href="#src6">[6]</a></sup><sup class="ref"><a href="#src14">[14]</a></sup>.</p>
+      <div class="card" style="margin:8px 0">
+        <h4>Daily reviews at that listing, 8–22 April 2025</h4>
+        <div class="sub">Grey = no text. The tournament ran 12–21 April.</div>
+        <div class="chart-short"><canvas id="chartSZ"></canvas></div>
+      </div>
+      <div class="exgrid">
+        <div class="k">The pattern</div><div>Mass on-site solicitation compressing a listing's rating history into one event; most resulting ratings textless.</div>
+        <div class="k">Why it matters</div><div>The listing's average no longer reflects insurance service at all. German courts treat undisclosed incentivized collection as misleading (OLG Frankfurt 2022, 2024 — vouchers, prize draws)<sup class="ref"><a href="#src6">[6]</a></sup><sup class="ref"><a href="#src7">[7]</a></sup>; Google prohibits soliciting reviews in bulk and any incentive<sup class="ref"><a href="#src14">[14]</a></sup>.</div>
+        <div class="k">Plausible origin</div><div>The agency itself, openly — the reviews name the event. Whether anything was offered for the stars is not visible in the data.</div>
+        <div class="k">Verify</div><div>Live listing linked below the chart's source note; sort reviews by date, scroll to April 2025.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exhibit" id="exD">
+    <div class="ex-head"><span class="tag-ex">Exhibit D</span><h3>Stars after scars — five-star inflow jumps 61% right after a negative</h3></div>
+    <div class="ex-body">
+      <p>For each of the 3,952 dated negative reviews in Germany we counted the listing's five-star reviews in the fourteen days before and after. Before: 0.57 on average. After: 0.91 — <strong>a 61 percent jump, measured symmetrically around each event</strong>, so background growth cannot produce it. In 193 episodes the response was flagrant: six or more five-stars within a fortnight at four-plus times the listing's pace. Extreme case: one negative on a Biberach listing<sup class="ref"><a href="#src42">[42]</a></sup> in August 2025 was followed by 55 five-star reviews in fourteen days, where the listing's baseline predicted about two. The pattern reads as reactive solicitation — bad review appears, the "ask happy customers" machinery starts. Google's policy name for the deliberate version, steering positives in while criticism stays out, is <em>review gating</em>, and it is prohibited<sup class="ref"><a href="#src14">[14]</a></sup>.</p>
+      <div class="card" style="margin:8px 0">
+        <h4>Average five-star reviews per listing, 14 days either side of a negative (DE)</h4>
+        <div class="sub">n = 3,952 negative-review events on listings with five-star history.</div>
+        <div class="chart-short"><canvas id="chartBA"></canvas></div>
+      </div>
+      <div class="exgrid">
+        <div class="k">The pattern</div><div>Negative reviews systematically followed by above-baseline five-star inflow; 193 flagrant burial episodes.</div>
+        <div class="k">Why it matters</div><div>Criticism is not answered but diluted; the rating a consumer sees is curated after the fact. Depending on execution (selective asking, incentives), this ranges from poor practice to UWG violation<sup class="ref"><a href="#src1">[1]</a></sup><sup class="ref"><a href="#src6">[6]</a></sup>.</div>
+        <div class="k">Plausible origin</div><div>Agencies monitoring their own listings. The reaction time — days — implies the operator watches closely.</div>
+        <div class="k">Verify</div><div>Reproducible from any scrape with timestamps; episode list with dates in the dataset.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exhibit" id="exE">
+    <div class="ex-head"><span class="tag-ex">Exhibit E</span><h3>The head-office wave — 2,546 reviews in four years, mostly silent five-stars</h3></div>
+    <div class="ex-body">
+      <p>Allianz Suisse's own head-office listing in Wallisellen<sup class="ref"><a href="#src43">[43]</a></sup> holds 4,815 reviews — 44 percent of the entire Swiss dataset — at 87 percent five-star. More than half arrived in a 2018–2021 wave; <strong>62 percent of the listing's five-star ratings have no text</strong>. An insurance head office is where people fight about claims, not where they drop happy ratings — the same company's Trustpilot page sits deep in the red<sup class="ref"><a href="#src44">[44]</a></sup>. 867 five-star ratings in the single year 2020 is the shape of a run campaign (NPS mail, app prompt, or similar), not of spontaneous gratitude. After the wave ends in 2022, volume falls to roughly a third of its peak and the negative share more than doubles.</p>
+      <div class="card" style="margin:8px 0">
+        <h4>HQ listing (Wallisellen): reviews per year</h4>
+        <div class="sub">Gold = five-star, grey = all others. The wave, then the correction.</div>
+        <div class="chart-short"><canvas id="chartHQ"></canvas></div>
+      </div>
+      <div class="exgrid">
+        <div class="k">The pattern</div><div>A four-year, five-star-heavy, largely textless inflow onto the corporate listing, ending abruptly; rating still benefits today.</div>
+        <div class="k">Why it matters</div><div>The 4.7 shown on the company's most-viewed listing rests on that legacy wave. If collection involved selective prompts or incentives, §5b(3) UWG's transparency duty and Google's rules are implicated<sup class="ref"><a href="#src2">[2]</a></sup><sup class="ref"><a href="#src14">[14]</a></sup>.</div>
+        <div class="k">Plausible origin</div><div>A company-run collection push is the natural reading; which channel, the data cannot show.</div>
+        <div class="k">Verify</div><div>Live listing linked; sort by date, note the textless runs of 2019–2021.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="sec-num">07 · The law</div>
+  <h2>Which of this is illegal, which is merely ugly</h2>
+  <p>The legal line runs between asking and faking, paying, or filtering. Since Germany implemented the EU Omnibus Directive in May 2022, fake reviews are per-se unfair; Switzerland reaches the same result via its unfair-competition act — with criminal liability on complaint.</p>
+  <div class="factbox">
+    <h4>The rules</h4>
+    <ul>
+      <li><span class="tag legal">Legal</span> Asking customers for reviews — mails, QR codes, event booths — if everyone is asked and nothing is promised in return.</li>
+      <li><span class="tag illegal">Prohibited</span> Fake or commissioned reviews: UWG Anhang Nr. 23c; presenting reviews as verified-genuine without verification: Nr. 23b<sup class="ref"><a href="#src1">[1]</a></sup>. Platforms and businesses displaying reviews must disclose whether and how authenticity is checked: §5b(3)<sup class="ref"><a href="#src2">[2]</a></sup>.</li>
+      <li><span class="tag illegal">Prohibited</span> Undisclosed incentivized reviews — vouchers (OLG Frankfurt 2022)<sup class="ref"><a href="#src6">[6]</a></sup>, prize draws (OLG Frankfurt 2024)<sup class="ref"><a href="#src7">[7]</a></sup>; hidden paid reviews (OLG Frankfurt 2019)<sup class="ref"><a href="#src4">[4]</a></sup>; the fake-review broker Fivestar Marketing was ordered shut out by LG München I<sup class="ref"><a href="#src5">[5]</a></sup>.</li>
+      <li><span class="tag ch-t">Switzerland</span> Misleading reviews: UWG Art. 2 and Art. 3(1)(b); intentional violations criminally punishable on complaint, Art. 23<sup class="ref"><a href="#src10">[10]</a></sup>. A 2021 SRF investigation found Swiss sellers offering 50 five-star reviews for CHF 400<sup class="ref"><a href="#src11">[11]</a></sup>.</li>
+      <li><span class="tag grey">Platform</span> Google prohibits fake engagement, any incentive for reviews, conflict-of-interest reviews and review gating; it reports 170M+ policy-violating reviews removed in 2023<sup class="ref"><a href="#src14">[14]</a></sup><sup class="ref"><a href="#src16">[16]</a></sup>.</li>
+      <li><span class="tag grey">Precedent</span> Insurance has form: wefox's call centers solicited positive Google reviews against Amazon vouchers of up to €30, lifting its rating from 2.5 to 4.5 stars<sup class="ref"><a href="#src17">[17]</a></sup><sup class="ref"><a href="#src18">[18]</a></sup>. No documented case names Allianz or its agencies; our search found none — absence of a case, not proof of absence.</li>
+    </ul>
+  </div>
+  <p>Enforcement is the weak joint. Germany polices this mainly through civil claims by competitors, the Wettbewerbszentrale and consumer associations; general fines exist only in coordinated cross-border cases (§19 UWG, up to €50,000 or 4 percent of turnover)<sup class="ref"><a href="#src3">[3]</a></sup>. Nobody audits star averages of their own motion. A listing can quintuple its review volume in two years without a single official question — as 7,111 of them just demonstrated.</p>
+</section>
+
+<section id="s8">
+  <div class="sec-num">08 · Where to report</div>
+  <h2>No register exists. These channels do.</h2>
+  <p>There is no public database of review-manipulation complaints in Germany or Switzerland — nothing to search for prior reports against a company. The nearest public artifact is the EU's DSA Transparency Database of platform moderation decisions<sup class="ref"><a href="#src9">[9]</a></sup>.</p>
+  <div class="factbox">
+    <h4>Channels</h4>
+    <ul>
+      <li><span class="tag grey">Platform</span> Google: flag individual reviews via the three-dot menu, or the business reviews-management tool<sup class="ref"><a href="#src15">[15]</a></sup>. Off-topic mass posts and conflict-of-interest reviews are removable categories.</li>
+      <li><span class="tag de-t">Germany</span> Wettbewerbszentrale complaint office (can warn and sue; not anonymous); Verbraucherzentralen; Bundesnetzagentur only as Digital Services Coordinator if a platform ignores notices (dsc.bund.de).</li>
+      <li><span class="tag ch-t">Switzerland</span> Lauterkeitskommission — free complaints, published decisions<sup class="ref"><a href="#src12">[12]</a></sup>; SECO — can sue or file criminal complaints where collective interests are affected<sup class="ref"><a href="#src13">[13]</a></sup>.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s9">
+  <div class="sec-num">09 · The bigger picture</div>
+  <h2>While the stars rose, the complaints rose too</h2>
+  <p>The years of the review surge are also record years at the complaint desks. The German insurance ombudsman logged <strong>21,548 complaints in 2024 and 28,904 in 2025 — records both years</strong><sup class="ref"><a href="#src26">[26]</a></sup><sup class="ref"><a href="#src27">[27]</a></sup>. About 73 percent of 2024's complaints were admissible; of those decided, <strong>34 percent (life) to 52 percent (other lines) ended at least partly in the customer's favour</strong><sup class="ref"><a href="#src26">[26]</a></sup>. BaFin's insurance complaints jumped in 2025, driven by slow claims handling<sup class="ref"><a href="#src29">[29]</a></sup> — the same theme that tops the negative reviews. Switzerland's ombudsman handled 3,336 matters in 2024; of 1,254 written complaints, 299 led to intervention<sup class="ref"><a href="#src28">[28]</a></sup>. Neither ombudsman publishes per-insurer numbers; BaFin's per-company table shows Allianz mid-field (life: 13 complaints per 100k contracts)<sup class="ref"><a href="#src25">[25]</a></sup>. No official claims-denial rate exists in either country; for German occupational-disability cover, approval of decided claims runs near 80 percent by industry count, lower once abandoned claims are included<sup class="ref"><a href="#src30">[30]</a></sup>.</p>
+  <h3>When the insurer calls the customer the liar</h3>
+  <p>Several Swiss negatives — and the trigger text of the flood in section 5 — describe being treated as a fraud suspect. That machinery is real and industrial: Germany's insurers run the HIS warning file (reportedly around 10 million entries; courts have ordered wrongful entries deleted)<sup class="ref"><a href="#src31">[31]</a></sup>; Switzerland launched its HIS in 2021 for the largest non-life insurers, ten entry reasons, seven-year retention<sup class="ref"><a href="#src32">[32]</a></sup>. Art. 40 VVG lets a Swiss insurer void the contract for a fraudulent claim — and the Federal Supreme Court recently had to restrain how easily "fraud" may be proven (4A_394/2021)<sup class="ref"><a href="#src33">[33]</a></sup>. The industry's claim that one in ten claims is suspicious is its own estimate, not an adjudicated fact<sup class="ref"><a href="#src34">[34]</a></sup>.</p>
+  <h3>The company</h3>
+  <div class="factbox">
+    <h4>Allianz, briefly</h4>
+    <ul>
+      <li><span class="tag grey">Group</span> FY2025: €186.9 bn total business volume, record €17.4 bn operating profit, ~97 m customers<sup class="ref"><a href="#src20">[20]</a></sup>.</li>
+      <li><span class="tag de-t">Germany</span> Market leader — 17.5% of gross premiums, #1 in life and P&amp;C<sup class="ref"><a href="#src21">[21]</a></sup>; roughly 8,000 tied agencies<sup class="ref"><a href="#src22">[22]</a></sup> — the listings this dataset is made of.</li>
+      <li><span class="tag ch-t">Switzerland</span> Allianz Suisse: ~CHF 3.7 bn premiums, #4 non-life (9.0%)<sup class="ref"><a href="#src23">[23]</a></sup><sup class="ref"><a href="#src24">[24]</a></sup>.</li>
+      <li><span class="tag grey">Record</span> 2022: US arm pleaded guilty to securities fraud (Structured Alpha, >$6 bn resolution)<sup class="ref"><a href="#src37">[37]</a></sup>. Swiss consumer TV documented Allianz Suisse cancelling long-time customers after claims<sup class="ref"><a href="#src38">[38]</a></sup>; German courts have ordered Allianz Leben to pay contested disability pensions<sup class="ref"><a href="#src39">[39]</a></sup>; flood-claim handling after Ahrtal 2021 drew industry-wide criticism<sup class="ref"><a href="#src40">[40]</a></sup>.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s10">
+  <div class="sec-num">10 · Method</div>
+  <h2>Definitions, honestly, and what this cannot prove</h2>
+  <p><strong>Data.</strong> Full census of Google reviews on Allianz agency and office listings: 7,111 German listings / 246,116 reviews (collected 8 Aug 2026), 107 Swiss listings / 10,859 reviews (21 Jul – 7 Aug 2026). Scraped counts match Google's displayed star totals; timestamps are exact dates.</p>
+  <p><strong>Definitions.</strong> <em>Burst week:</em> ≥8 five-star reviews within 7 days at ≥4× the listing's own average weekly pace. <em>Suspect-positive:</em> a five-star review inside a burst week, or by a profile that rated ≥5 different Allianz agencies at ≥4.5 average. <em>Campaign-negative:</em> a 1–2★ review by a profile posting negatives on ≥3 listings. <em>Owner match:</em> reviewer name equals the owner name in another listing's title; common-surname caveat applies and is quantified in Exhibit A. <em>Themes:</em> multilingual regex buckets (DE/FR/IT/EN) over negative texts. Language identification is automatic and noisy below ~40 characters.</p>
+  <p><strong>Limits.</strong> Google shows only what moderation left standing; removed reviews are invisible, which biases the record toward surviving manipulation. Reviewer identity cannot be verified from outside — a name match is strong circumstantial evidence at same-day reciprocity scale, and weak alone. Burst and after-negative patterns are screening indicators of solicitation, not proof of purchase. Quoted allegations are the reviewers' own. Individuals appear here as initials; the dataset preserves public names and profile URLs so every exhibit can be independently reproduced. This report names patterns and tests explanations; it convicts nobody.</p>
+  <hr class="divider">
+  <h3 id="src1x">Sources</h3>
+  <div class="sources"><ol id="sourceOl"></ol></div>
+</section>
+
+<footer>
+  Compiled August 2026 from public Google Maps reviews and the cited public sources. Self-contained file; charts render locally and offline. Counts reflect collection dates and will drift as reviews are added or removed.
+</footer>
 </div>
-<div class="wrap rise d4"><div class="ticker">
-<div class="tick"><div class="tn">500k+</div><div class="tl">devices in the platform migration I architect</div></div>
-<div class="tick"><div class="tn">2M+</div><div class="tl">events/day across monitoring pipelines</div></div>
-<div class="tick"><div class="tn">$9T</div><div class="tl">trade-finance market served by AI models I trained</div></div>
-<div class="tick"><div class="tn">50+</div><div class="tl">STEM students mentored</div></div>
-</div></div>
-</div>
-
-<div class="sec" id="about"><div class="wrap">
-<div class="shead"><span class="sidx">01</span><h2 class="stitle">About</h2><div class="srule"></div></div>
-<div class="aboutgrid">
-<p class="abouttext">Software engineer with 8+ years across telecommunications, banking, and enterprise software. I combine hands-on engineering — Python, Java, cloud-native stacks — with production AI/ML: predictive models for bandwidth forecasting and anomaly detection, document AI for trade finance, and GenAI/LLM tooling woven into everyday team workflows. As Security Champion I keep quality honest through threat modeling and architecture reviews. I believe <b>leadership is a practice, not a length of service</b> — I mentor, unblock, and set technical direction I can defend at the whiteboard.</p>
-<div class="catbox"><img class="catimg" src="cat-meme.jpg" alt="Cat meme"><div class="catcap">chief morale officer</div></div>
-</div>
-</div></div>
-
-<div class="sec" id="next"><div class="wrap">
-<div class="shead"><span class="sidx">02</span><h2 class="stitle">Open to what's next</h2><div class="srule"></div></div>
-<div class="openrow">
-<div class="oi"><div class="oik">Team leadership</div><div class="oiv">Leading engineering teams in banking &amp; finance — where I've already built, shipped, and mentored.</div></div>
-<div class="oi"><div class="oik">Quant development</div><div class="oiv">Markets, trading algorithms, and data at speed — building on KDB and pipeline work at Morgan Stanley.</div></div>
-<div class="oi"><div class="oik">LLMs &amp; applied AI</div><div class="oiv">Production GenAI: document intelligence, forecasting, and LLM tooling teams actually use.</div></div>
-<div class="oi"><div class="oik">Math &amp; statistics</div><div class="oiv">Time-series, anomaly detection, statistical modeling — the quantitative core behind everything above.</div></div>
-</div>
-</div></div>
-
-<div class="sec" id="work"><div class="wrap">
-<div class="shead"><span class="sidx">03</span><h2 class="stitle">Case studies</h2><div class="srule"></div></div>
-<div class="cases">
-<div class="case"><div class="cnum">/01</div><h3 class="ctitle">Cisco PCA Platform Migration</h3><div class="cwhere">Swisscom · 2022 – present</div><p class="ctext">Driving the end-to-end migration of monitoring infrastructure from VMware Smarts &amp; Watch4net to Cisco PCA across ~500k devices — redesigning data pipelines, alerting architecture, and integration patterns, with BluePlanet RDC for automated resource discovery. Product owner for stakeholder-facing workstreams serving Swiss enterprises and banks.</p><div class="ctags">architecture · python · kubernetes · spring-boot · product-ownership</div></div>
-<div class="case"><div class="cnum">/02</div><h3 class="ctitle">Predictive Network Analytics</h3><div class="cwhere">Swisscom · 2022 – present</div><p class="ctext">Production ML for time-series bandwidth forecasting, anomaly detection, and capacity planning over 2M+ daily events. Statistical reporting products designed with — and for — enterprise clients. GenAI/LLM adoption across the team: automated code review, intelligent log analysis, threat detection.</p><div class="ctags">scikit-learn · time-series · genai/llm · data-pipelines</div></div>
-<div class="case"><div class="cnum">/03</div><h3 class="ctitle">Document AI for Trade Finance</h3><div class="cwhere">Traydstream · 2020 (contract)</div><p class="ctext">Helped shape the OCR algorithm of an AI platform automating document processing in the $9 trillion trade-finance market — training models for various contract types and guiding parser design across document classes. Greenfield fintech, built from the ground up.</p><div class="ctags">ocr · model-training · python · fintech</div></div>
-<div class="case"><div class="cnum">/04</div><h3 class="ctitle">Quant-Dev Data &amp; Pipelines</h3><div class="cwhere">Morgan Stanley · 2018 – 2020</div><p class="ctext">Built data-science and pipeline solutions shaping MS infrastructure — ML for indexing unstructured data, a Splunk dashboard monitoring ~70k devices, operational trend models. Later moved via internal mobility into trading-focused teams. Led the Certification Automation Tool project.</p><div class="ctags">splunk-ml · kdb · flask · banking</div></div>
-<div class="case"><div class="cnum">/05</div><h3 class="ctitle">CI/CD at Manufacturing Scale</h3><div class="cwhere">Leica Geosystems (Hexagon) · 2021</div><p class="ctext">Redesigned the firm-wide licensing team's pipeline with dev/QA/prod segregation: deployments −30%, builds −60%, release time from 2 hours to 49 minutes. Cross-platform build automation for iOS, Android, Windows, and Linux.</p><div class="ctags">ci/cd · devops · .net · c++</div></div>
-<div class="case"><div class="cnum">/06</div><h3 class="ctitle">Smart Parking Venture</h3><div class="cwhere">Side venture · Switzerland</div><p class="ctext">Designed a parking solution using image recognition and automation to simplify parking in Swiss cities. It didn't find investors or government backing — and it taught me more about product, persistence, and starting again than any success has.</p><div class="ctags">computer-vision · entrepreneurship · lessons-learned</div></div>
-</div>
-</div></div>
-
-<div class="sec" id="repos"><div class="wrap">
-<div class="shead"><span class="sidx">04</span><h2 class="stitle">Code</h2><div class="srule"></div></div>
-<p class="reponote">Pulled live from <a class="acc" href="https://github.com/kacsa007" target="_blank" rel="noopener">github.com/kacsa007</a> — always current.</p>
-<div class="repolist" id="repo-list"></div>
-<div class="fallback" id="repo-fallback">Couldn't reach the GitHub API right now — browse my repositories directly at <a class="acc" href="https://github.com/kacsa007?tab=repositories" target="_blank" rel="noopener">github.com/kacsa007</a>.</div>
-<div class="langchart" id="lang-chart" style="display:none"><div class="lctitle">Languages across my repos</div><p class="lcnote">Computed live from the GitHub API — share of repositories per primary language.</p><div id="lang-rows"></div></div>
-<div class="langchart" id="visitor-chart" style="display:none"><div class="lctitle">Visitors — last 7 days</div><p class="lcnote">Live from GoatCounter · <span id="visitor-total"></span> total page views.</p><div id="visitor-rows"></div></div>
-</div></div>
-
-<div class="sec" id="skills"><div class="wrap">
-<div class="shead"><span class="sidx">05</span><h2 class="stitle">Skills</h2><div class="srule"></div></div>
-<div class="skgrid">
-<div class="sk"><span class="skk">languages</span><span class="skv">Python · Java · C++ · JavaScript · Kotlin · C# · SQL</span></div>
-<div class="sk"><span class="skk">ai / ml</span><span class="skv">PyTorch · scikit-learn · NumPy · Pandas · LLMs &amp; GenAI · Splunk ML · data pipelines</span></div>
-<div class="sk"><span class="skk">devops &amp; cloud</span><span class="skv">Docker · Kubernetes · AWS · Azure · OpenShift · Ansible · CI/CD (Jenkins, GitLab, Bitbucket)</span></div>
-<div class="sk"><span class="skk">frameworks</span><span class="skv">Spring Boot · Flask · Django · Angular · Node.js</span></div>
-<div class="sk"><span class="skk">data</span><span class="skv">SQL · KDB · MongoDB · MariaDB · statistical methods · data modeling · reporting</span></div>
-<div class="sk"><span class="skk">security</span><span class="skv">Threat modeling · vulnerability assessment · penetration testing · architecture review</span></div>
-<div class="sk"><span class="skk">emerging</span><span class="skv">Blockchain · DeFi · Web3 · real-world asset tokenization</span></div>
-<div class="sk"><span class="skk">human languages</span><span class="skv">EN, HU, RO (native) · DE (advanced) · ES (intermediate) · IT, FR (beginner)</span></div>
-</div>
-</div></div>
-
-<footer class="foot" id="contact"><div class="wrap">
-<h2 class="fbig">Let's build something. <a href="mailto:endre.lazar@yahoo.com">Say hello.</a></h2>
-<div class="fsub">Based in Lachen SZ, Switzerland · open to Zurich, Baden &amp; remote-friendly roles</div>
-<div class="fmeta">© <span id="yr"></span> Endre Lázár · built as a single HTML file, hosted on GitHub Pages</div>
-</div></footer>
 
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-const modeBtn = document.getElementById('modebtn');
-function applyDark(dark) {
-  document.body.classList.toggle('darkbody', dark);
-  modeBtn.textContent = dark ? '☀ light' : '☾ dark';
-}
-let darkMode = localStorage.getItem('portfolio-dark') === '1';
-applyDark(darkMode);
-modeBtn.addEventListener('click', () => {
-  darkMode = !darkMode;
-  localStorage.setItem('portfolio-dark', darkMode ? '1' : '0');
-  applyDark(darkMode);
-});
-(async function loadRepos() {
-  const list = document.getElementById('repo-list');
-  const fallback = document.getElementById('repo-fallback');
-  try {
-    const res = await fetch('https://api.github.com/users/kacsa007/repos?sort=updated&per_page=12');
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    let repos = await res.json();
-    repos = repos.filter(r => !r.fork);
-    if (!repos.length) throw new Error('no repos');
-    for (const r of repos) {
-      const row = document.createElement('a');
-      row.className = 'rrow';
-      row.href = r.html_url; row.target = '_blank'; row.rel = 'noopener';
-      const updated = new Date(r.pushed_at).toLocaleDateString('en-GB', { year: 'numeric', month: 'short' });
-      const name = document.createElement('span'); name.className = 'rname'; name.textContent = r.name;
-      const desc = document.createElement('p'); desc.className = 'rdesc'; desc.textContent = r.description || 'No description yet — click through to explore the code.';
-      const meta = document.createElement('span'); meta.className = 'rmeta';
-      meta.textContent = (r.language ? r.language + ' · ' : '') + '★ ' + r.stargazers_count + ' · updated ' + updated;
-      row.append(name, desc, meta);
-      list.appendChild(row);
-    }
-    const counts = {};
-    for (const r of repos) if (r.language) counts[r.language] = (counts[r.language] || 0) + 1;
-    const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
-    const langs = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 6);
-    if (langs.length) {
-      document.getElementById('lang-chart').style.display = 'block';
-      const rows = document.getElementById('lang-rows');
-      for (const [lang, n] of langs) {
-        const rowEl = document.createElement('div'); rowEl.className = 'lrow';
-        const nm = document.createElement('span'); nm.className = 'lname'; nm.textContent = lang;
-        const track = document.createElement('div'); track.className = 'ltrack';
-        const bar = document.createElement('div'); bar.className = 'lbar'; bar.style.width = Math.round(n / total * 100) + '%';
-        track.appendChild(bar);
-        const val = document.createElement('span'); val.className = 'lval'; val.textContent = n + (n === 1 ? ' repo' : ' repos');
-        rowEl.append(nm, track, val);
-        rows.appendChild(rowEl);
-      }
-    }
-  } catch (e) { fallback.style.display = 'block'; }
-})();
-(async function loadVisitors() {
-  const base = 'https://kacsa007.goatcounter.com/counter/TOTAL.json';
-  const parse = s => parseInt(String(s).replace(/[^\d]/g, ''), 10) || 0;
-  try {
-    const totRes = await fetch(base);
-    if (!totRes.ok) throw new Error('HTTP ' + totRes.status);
-    const tot = await totRes.json();
-    const days = [];
-    for (let i = 6; i >= 0; i--) {
-      const d = new Date(); d.setDate(d.getDate() - i);
-      const iso = d.toISOString().slice(0, 10);
-      const res = await fetch(base + '?start=' + iso + '&end=' + iso);
-      const j = res.ok ? await res.json() : { count: '0' };
-      days.push({ day: d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric' }), n: parse(j.count) });
-    }
-    const max = Math.max(1, ...days.map(x => x.n));
-    document.getElementById('visitor-total').textContent = parse(tot.count).toLocaleString('en-GB');
-    const rows = document.getElementById('visitor-rows');
-    for (const x of days) {
-      const rowEl = document.createElement('div'); rowEl.className = 'lrow';
-      const nm = document.createElement('span'); nm.className = 'lname'; nm.textContent = x.day;
-      const track = document.createElement('div'); track.className = 'ltrack';
-      const bar = document.createElement('div'); bar.className = 'lbar'; bar.style.width = Math.max(2, Math.round(x.n / max * 100)) + '%';
-      track.appendChild(bar);
-      const val = document.createElement('span'); val.className = 'lval'; val.textContent = x.n;
-      rowEl.append(nm, track, val);
-      rows.appendChild(rowEl);
-    }
-    document.getElementById('visitor-chart').style.display = 'block';
-  } catch (e) { /* GoatCounter not set up yet — chart stays hidden */ }
-})();
-</script>
+const DATA = {"dist": {"DE": [{"n": 3548, "pct": 1.4}, {"n": 429, "pct": 0.2}, {"n": 791, "pct": 0.3}, {"n": 4785, "pct": 1.9}, {"n": 236563, "pct": 96.1}], "CH": [{"n": 919, "pct": 8.5}, {"n": 87, "pct": 0.8}, {"n": 114, "pct": 1.0}, {"n": 599, "pct": 5.5}, {"n": 9140, "pct": 84.2}]}, "monthly": {"labels": ["2017-01", "2017-02", "2017-03", "2017-04", "2017-05", "2017-06", "2017-07", "2017-08", "2017-09", "2017-10", "2017-11", "2017-12", "2018-01", "2018-02", "2018-03", "2018-04", "2018-05", "2018-06", "2018-07", "2018-08", "2018-09", "2018-10", "2018-11", "2018-12", "2019-01", "2019-02", "2019-03", "2019-04", "2019-05", "2019-06", "2019-07", "2019-08", "2019-09", "2019-10", "2019-11", "2019-12", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-07", "2026-08"], "DE": [117, 175, 201, 133, 133, 164, 241, 248, 285, 244, 311, 303, 418, 439, 487, 437, 395, 482, 439, 458, 376, 433, 448, 458, 566, 668, 714, 602, 666, 706, 809, 881, 740, 835, 947, 788, 1071, 1579, 1236, 530, 816, 996, 1050, 1132, 1250, 1330, 1468, 1110, 1164, 1419, 1651, 1303, 1214, 976, 1070, 927, 941, 911, 1023, 796, 955, 1269, 1174, 902, 1021, 1148, 1204, 1208, 1230, 1185, 1252, 1013, 1205, 1620, 1779, 2577, 1935, 1788, 1940, 1956, 1759, 1848, 1825, 1382, 1592, 2004, 2107, 1744, 1562, 1627, 1776, 1937, 2372, 2490, 2792, 2041, 2864, 4920, 5242, 3784, 3857, 3928, 5178, 4237, 5387, 7728, 10758, 10533, 8684, 11712, 11584, 11633, 8470, 9353, 10250, 2205], "CH": [0, 2, 2, 1, 1, 4, 5, 2, 3, 10, 6, 9, 6, 5, 4, 8, 13, 29, 24, 26, 32, 26, 34, 51, 54, 47, 59, 53, 60, 60, 54, 47, 108, 110, 135, 124, 138, 140, 142, 102, 117, 117, 110, 143, 152, 85, 149, 96, 118, 144, 145, 103, 114, 94, 97, 98, 103, 121, 102, 106, 118, 23, 25, 57, 92, 108, 112, 134, 119, 95, 70, 57, 66, 47, 57, 64, 78, 99, 70, 88, 65, 73, 94, 43, 47, 48, 42, 54, 43, 38, 130, 100, 101, 118, 84, 97, 110, 55, 74, 119, 171, 198, 271, 287, 245, 232, 310, 202, 202, 258, 325, 224, 220, 268, 231, 38]}, "yearly": {"DE": [["2011", 4], ["2012", 5], ["2013", 15], ["2014", 69], ["2015", 140], ["2016", 647], ["2017", 2555], ["2018", 5270], ["2019", 8922], ["2020", 13568], ["2021", 13395], ["2022", 13561], ["2023", 21614], ["2024", 24044], ["2025", 68416], ["2026", 73891]], "CH": [["2015", 3], ["2016", 10], ["2017", 45], ["2018", 258], ["2019", 911], ["2020", 1491], ["2021", 1345], ["2022", 1010], ["2023", 844], ["2024", 902], ["2025", 2274], ["2026", 1766]]}, "asym": {"DE": {"p5_adv": 54.7, "p5_clm": 9.2, "ng_clm": 13.2}, "CH": {"p5_adv": 32.8, "p5_clm": 18.3, "ng_clm": 26.0}}, "themes": {"DE": [["Silence / no answer", 11.1, 303], ["Cancellation disputes", 8.2, 223], ["Calls it fraud / rip-off", 3.9, 106], ["Claim denied or cut", 3.3, 91], ["Premium increases", 2.6, 71], ["Lawyer, court, ombudsman", 2.6, 70], ["Says insurer accused them", 0.7, 20], ["Alleges discrimination", 0.3, 9]], "CH": [["Cancelled by insurer", 11.4, 77], ["Silence / no answer", 7.9, 53], ["Claim denied or cut", 6.4, 43], ["Premium increases", 3.3, 22], ["Calls it fraud / rip-off", 2.2, 15], ["Lawyer, court, ombudsman", 2.2, 15], ["Says insurer accused them", 0.9, 6], ["Alleges discrimination", 0.4, 3]]}, "lang": {"CH": [{"lang": "German", "vals": [62.1, 70.1]}, {"lang": "French", "vals": [26.8, 22.1]}, {"lang": "English", "vals": [5.7, 2.6]}, {"lang": "Italian", "vals": [5.1, 4.3]}, {"lang": "Other", "vals": [0.3, 0.9]}]}, "quotes": [{"mkt": "DE", "rating": 1, "date": "Mar 2025", "tags": ["cancelled", "denied"], "orig": "Ich war ca. 10 Jahre dort in vielen Bereichen versichert und mir wurde eine Versicherung gekündigt, weil ich diese zu oft genutzt hätte…", "en": "\"I was insured there for about ten years across many lines, and one of my policies was cancelled because I had supposedly used it too often…\""}, {"mkt": "DE", "rating": 1, "date": "Apr 2026", "tags": ["silence"], "orig": "Selbst nach einer Reaktion auf meine Bewertung hat sich nichts geändert – ich habe erneut geschrieben, wurde aber weiterhin ignoriert.", "en": "\"Even after they responded to my review, nothing changed – I wrote again and continued to be ignored.\""}, {"mkt": "DE", "rating": 1, "date": "Jan 2025", "tags": ["accused", "legal"], "orig": "Obwohl ich nur ein Preisvergleich machen wollte, haben die mir einen Vertrag angedreht! … Bis ich ein Brief vom Amtsgericht bekommen habe (Vollstreckung).", "en": "\"I only wanted a price comparison and they pushed a contract on me… until I got a letter from the district court (enforcement).\""}, {"mkt": "DE", "rating": 1, "date": "May 2023", "tags": ["cancelled"], "orig": "Unsere Kündigung ist (angeblich) nicht angekommen … und dann wurde die Kündigung abgelehnt, da die Zusendung … leider zu spät angekommen sei?!", "en": "\"Our cancellation letter (allegedly) never arrived… and then the cancellation was rejected because it had supposedly come too late?!\""}, {"mkt": "DE", "rating": 1, "date": "Sep 2024", "tags": ["discrim"], "orig": "…wurde ich leider sehr schlecht und mit deutlichem Rassismus behandelt … Sie hat mir gesagt, ich solle woanders hingehen, unsere Preise sind teuer für dich.", "en": "\"…I was treated very badly, with clear racism… she told me I should go elsewhere, our prices are expensive for you.\""}, {"mkt": "DE", "rating": 1, "date": "Jul 2021", "tags": ["discrim"], "orig": "Meine Mutter wurde hier … aufgrund ihrer Herkunft diskriminiert. Anstatt ihr zu helfen wurde ihr gesagt, dass sie besser Deutsch lernen soll…", "en": "\"My mother was discriminated against here because of her origin. Instead of helping her, she was told she had better learn German…\""}, {"mkt": "DE", "rating": 1, "date": "Jan 2024", "tags": ["accused"], "orig": "Uns private Probleme zu unterstellen empfinde ich als üble Nachrede… Falls es Ihnen nicht bewusst ist: Ehepartner können sehr wohl unterschiedlicher Meinung sein.", "en": "\"Imputing private problems to us [in the agency's public reply] is defamation… in case you are not aware: spouses can indeed hold different opinions.\" – after the agency publicly disputed a couple's critical reviews"}, {"mkt": "CH", "rating": 1, "date": "Mar 2024", "tags": ["denied"], "orig": "Die Hotline verzögert jedoch die Bearbeitung – aus Absicht oder Unfähigkeit. Damit befreit sich die Allianz selber von der Leistungspflicht und verweigert die Zahlung.", "en": "\"The hotline delays processing – by intent or incompetence. That way Allianz releases itself from its duty to perform and refuses payment.\" – on travel insurance"}, {"mkt": "CH", "rating": 1, "date": "May 2024", "tags": ["cancelled"], "orig": "Nach 20 Jahren Kunde … hat man plötzlich … mehrere kleinere Schäden …, wird uns deswegen plötzlich sogar die ganze Police mit allen Produkten gekündigt.", "en": "\"After twenty years as a customer… suddenly a few smaller claims… and because of that the entire policy, all products, gets cancelled on us.\""}, {"mkt": "CH", "rating": 1, "date": "Oct 2021", "tags": ["denied", "legal"], "orig": "Musste zum Anwalt. Wollen nicht bezahlen … solange sich die Betroffene in Deutschland aufhält (bin dort schwer erkrankt) … wird kein Krankentagegeld bezahlt.", "en": "\"Had to get a lawyer. They will not pay… as long as the insured person is staying in Germany (where I fell seriously ill), no daily sickness benefit is paid.\""}, {"mkt": "CH", "rating": 1, "date": "Jan 2025", "tags": ["denied", "accused"], "orig": "…se continua la malattia allora si inventano le più fantasiose scuse per non pagare più, dando anche la colpa al beneficiario della polizza.", "en": "\"…if the illness continues, they invent the most imaginative excuses to stop paying – even putting the blame on the policyholder.\" (Italian)"}, {"mkt": "CH", "rating": 1, "date": "Apr 2023", "tags": ["silence", "legal"], "orig": "Nous sommes restés 8 mois sans solution de leur part. Nous avons dû faire appel à un avocat pour faire avancer les choses.", "en": "\"We went eight months without a solution from them. We had to bring in a lawyer to get things moving.\" (French)"}, {"mkt": "CH", "rating": 1, "date": "Jun 2026", "tags": ["silence"], "orig": "Auf E-Mails erhält man keine Antwort – wie auch in vielen anderen Bewertungen zu lesen ist … Statt einer Lösung wird die Verantwortung auf den Kunden abgewälzt.", "en": "\"E-mails go unanswered – as many other reviews also note… instead of a solution, responsibility is shifted onto the customer.\""}, {"mkt": "CH", "rating": 1, "date": "Aug 2026", "tags": ["cancelled", "legal"], "orig": "Trotz meiner Kündigung und obwohl ich meine sehr schwierige finanzielle Situation erklärt habe, wurden weiterhin Forderungen gestellt und eine Betreibung eingeleitet.", "en": "\"Despite my cancellation, and although I explained my very difficult financial situation, they kept raising claims and initiated debt collection.\""}], "trend": {"years": ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"], "sus": [617, 914, 1703, 1608, 1989, 3183, 3864, 13644, 7346], "camp": [0, 3, 0, 0, 3, 1, 3, 6, 51]}, "el": [["2025-11", 0], ["2025-12", 0], ["2026-01", 1], ["2026-02", 0], ["2026-03", 39], ["2026-04", 0], ["2026-05", 1]], "recip": {"Same day": 30, "1–2 days": 11, "3–30 days": 24, "31–365 days": 9, "> 1 year": 14}, "pairs": [{"a": "M. H.", "b": "S. B.", "gap": 0, "d1": "2026-03-06", "d2": "2026-03-06"}, {"a": "C. S.", "b": "R. M.", "gap": 0, "d1": "2023-06-27", "d2": "2023-06-27"}, {"a": "C. G.", "b": "T. H.", "gap": 0, "d1": "2026-04-23", "d2": "2026-04-23"}, {"a": "C. G.", "b": "G. O.", "gap": 0, "d1": "2026-04-16", "d2": "2026-04-16"}, {"a": "J. B.", "b": "T. B.", "gap": 0, "d1": "2019-09-12", "d2": "2019-09-12"}, {"a": "S. B.", "b": "T. R.", "gap": 0, "d1": "2023-11-08", "d2": "2023-11-08"}, {"a": "D. S.", "b": "L. L.", "gap": 0, "d1": "2023-03-22", "d2": "2023-03-22"}, {"a": "D. S.", "b": "R. M.", "gap": 0, "d1": "2026-03-17", "d2": "2026-03-17"}, {"a": "D. K.", "b": "S. N.", "gap": 0, "d1": "2026-01-27", "d2": "2026-01-27"}], "tour": [{"name": "David V.", "agencies": 73, "cities": 38, "avg": 4.97, "first": "2023-06", "last": "2026-08", "max30": 17}, {"name": "Martin B.", "agencies": 55, "cities": 37, "avg": 5.0, "first": "2017-10", "last": "2026-07", "max30": 9}, {"name": "Oliver F.", "agencies": 44, "cities": 28, "avg": 5.0, "first": "2014-06", "last": "2026-06", "max30": 27}, {"name": "Dietmar D.", "agencies": 34, "cities": 31, "avg": 5.0, "first": "2025-09", "last": "2025-12", "max30": 33}, {"name": "Andre B.", "agencies": 32, "cities": 26, "avg": 5.0, "first": "2015-09", "last": "2026-02", "max30": 5}, {"name": "Ete (pseudonym)", "agencies": 30, "cities": 15, "avg": 4.97, "first": "2020-02", "last": "2026-02", "max30": 9}, {"name": "Ellis K.", "agencies": 28, "cities": 24, "avg": 5.0, "first": "2015-07", "last": "2026-05", "max30": 4}, {"name": "Christoph F.", "agencies": 24, "cities": 21, "avg": 5.0, "first": "2021-01", "last": "2026-08", "max30": 4}], "sz": [["2025-04-08", 0, 0], ["2025-04-09", 0, 0], ["2025-04-10", 0, 0], ["2025-04-11", 0, 0], ["2025-04-12", 1, 1], ["2025-04-13", 91, 71], ["2025-04-14", 59, 49], ["2025-04-15", 15, 12], ["2025-04-16", 0, 0], ["2025-04-17", 0, 0], ["2025-04-18", 0, 0], ["2025-04-19", 0, 0], ["2025-04-20", 0, 0], ["2025-04-21", 0, 0], ["2025-04-22", 0, 0]], "ba": {"before": 0.57, "after": 0.91}, "hq": [["2018", 172, 158], ["2019", 653, 610], ["2020", 970, 867], ["2021", 751, 654], ["2022", 581, 501], ["2023", 420, 363], ["2024", 361, 302], ["2025", 452, 377], ["2026", 450, 373]], "sources": [{"t": "UWG Anhang (zu §3 Abs. 3) Nr. 23b/23c — blacklist on fake reviews", "u": "https://www.gesetze-im-internet.de/uwg_2004/anhang.html", "n": "in force since 28 May 2022"}, {"t": "§5b Abs. 3 UWG — duty to disclose review-authenticity checks", "u": "https://www.gesetze-im-internet.de/uwg_2004/__5b.html", "n": ""}, {"t": "§19 UWG — fines up to €50,000 / 4% of turnover in coordinated cross-border cases", "u": "https://www.gesetze-im-internet.de/uwg_2004/__19.html", "n": ""}, {"t": "OLG Frankfurt a.M., 22.02.2019 – 6 W 9/19: undisclosed paid reviews unfair", "u": "https://www.lto.de/recht/nachrichten/n/olg-frankfurt-6w9-19-gekaufte-produktbewertung-amazon-dritthaendler-unlauter", "n": ""}, {"t": "LG München I, 14.11.2019: fake-review broker (Fivestar Marketing) unlawful", "u": "https://www.beck-aktuell.de/heute-im-recht/rechtsprechung/lg-muenchen-i-fake-bewertungen-rechtswidrig-2019-11-14", "n": ""}, {"t": "OLG Frankfurt a.M. 2022 – 6 U 232/21: undisclosed incentivized reviews misleading", "u": "https://www.ihk.de/chemnitz/recht-und-steuern/rechtsinformationen/wettbewerbsrecht/kundenbewertungen-5567880", "n": ""}, {"t": "OLG Frankfurt a.M., 20.06.2024 – 6 U 128/23: prize-draw-triggered reviews misleading", "u": "https://bbs-law.de/2024/12/olg-frankfurt-am-main-werbung-mit-gewinnspiel-getriggerten-bewertungen-unzulaessig/", "n": ""}, {"t": "Directive (EU) 2019/2161 (Omnibus) — EU review-authenticity rules", "u": "https://eur-lex.europa.eu/eli/dir/2019/2161/oj", "n": ""}, {"t": "DSA Transparency Database — public log of platform moderation decisions", "u": "https://transparency.dsa.ec.europa.eu/", "n": ""}, {"t": "Swiss UWG (SR 241), Art. 2, Art. 3 Abs. 1 lit. b, Art. 23", "u": "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/de", "n": "criminal liability on complaint"}, {"t": "SRF Data/Kassensturz: Swiss firms bought fake Google reviews (CHF 400 / 50 stars)", "u": "https://www.srf.ch/news/google-maps-frisiertes-rating-diese-firmen-kauften-fake-bewertungen", "n": "2021 investigation"}, {"t": "Schweizerische Lauterkeitskommission — free complaints, published decisions", "u": "https://www.faire-werbung.ch/de/beschwerde/", "n": ""}, {"t": "SECO — federal complaint office for unfair commercial practices", "u": "https://www.seco.admin.ch/de/unlauterer-wettbewerb", "n": ""}, {"t": "Google Maps prohibited-content policy: fake engagement, incentives, conflict of interest, review gating", "u": "https://support.google.com/contributionpolicy/answer/7400114", "n": ""}, {"t": "Google: how to flag inappropriate reviews", "u": "https://support.google.com/business/answer/4596773", "n": ""}, {"t": "Google removed 170M+ policy-violating reviews in 2023", "u": "https://www.techspot.com/news/101878-over-170-million-fake-reviews-removed-google-2023.html", "n": ""}, {"t": "Versicherungsmonitor: wefox Google-review affair", "u": "https://versicherungsmonitor.de/2024/01/19/wefox-chefs-faelschten-google-bewertungen/", "n": "Jan 2024"}, {"t": "Handelsblatt: wefox internal probe into voucher reviews", "u": "https://www.handelsblatt.com/finanzen/banken-versicherungen/versicherer/bewertungen-bei-google-wefox-geht-untreueverdacht-nach/100008549.html", "n": ""}, {"t": "Stiftung Warentest: undercover test of review agencies", "u": "https://www.test.de/Fake-Bewertungen-Wie-Verkaeufer-mit-gekauftem-Lob-Kunden-manipulieren-5401497-0/", "n": ""}, {"t": "Allianz Group FY2025 results: €186.9bn volume, €17.4bn operating profit", "u": "https://www.allianz.com/de/mediencenter/news/medienmitteilungen/finanzen/260226-4q-2025-quartalsmitteilung.html", "n": ""}, {"t": "German insurer market shares 2024 (Allianz 17.51%)", "u": "https://www.versicherungsbote.de/id/4945983/Marktanteile-der-Erstversicherer-2024-Allianz-Generali-RV-und-Debeka-im-Ueberblick/", "n": ""}, {"t": "procontra: Allianz's ~8,000 tied agents", "u": "https://www.procontra-online.de/versicherer/artikel/allianz-plant-aenderungen-fuer-ihre-8-000-versicherungsvertreter", "n": ""}, {"t": "FINMA Versicherungsmarktbericht 2024 (Allianz Suisse market position)", "u": "https://www.finma.ch/de/~/media/finma/dokumente/dokumentencenter/myfinma/finma-publikationen/versicherungsbericht/20250903-versicherungsmarktbericht-2024.pdf", "n": ""}, {"t": "Allianz Suisse Geschäftsbericht 2024", "u": "https://www.allianz.ch/content/dam/onemarketing/azch/common/allianz/de/medienberichte/ASV_Geschaeftsbericht_2024_DE.pdf", "n": ""}, {"t": "BaFin Beschwerdestatistik 2024 (per-company complaint counts)", "u": "https://www.bafin.de/SharedDocs/Downloads/DE/Statistik/Beschwerde/dl_st_2024_beschwerde.html", "n": ""}, {"t": "Versicherungsombudsmann, Jahresbericht 2024: 21,548 complaints; success rates 34.4%/52.4%", "u": "https://www.versicherungsombudsmann.de/wp-content/uploads/Jahresbericht_2024.pdf", "n": ""}, {"t": "Versicherungsombudsmann, Jahresbericht 2025: record 28,904 complaints", "u": "https://www.versicherungsombudsmann.de/wp-content/uploads/Jahresbericht_2025.pdf", "n": ""}, {"t": "Swiss Ombudsman der Privatversicherung, 2024 figures", "u": "https://www.handelszeitung.ch/insurance/streit-um-leistung-der-unfallversicherung-fuhrt-am-haufigsten-zu-beschwerden-818515", "n": ""}, {"t": "Handelsblatt: BaFin insurance complaints jump 2025, slow claims handling", "u": "https://www.handelsblatt.com/finanzen/banken-versicherungen/versicherer/versicherung-anzahl-der-beschwerden-ueber-versicherer-steigt-deutlich/100195187.html", "n": ""}, {"t": "Occupational-disability approval rates: GDV vs Franke & Bornberg", "u": "https://www.versicherungsbote.de/id/4836759/Berufsunfaehigkeitsversicherung-GDV-Statistik-Franke-Bornberg/", "n": ""}, {"t": "Handelsblatt: the HIS insurer warning database in criticism", "u": "https://www.handelsblatt.com/finanzen/banken-versicherungen/versicherer/versichererdatenbank-his-in-der-kritik-schwarze-kundenliste-mit-obskuren-kriterien/13407408.html", "n": ""}, {"t": "SVV: the Swiss HIS (since 2021)", "u": "https://svv.ch/de/his", "n": ""}, {"t": "BGer 4A_394/2021: limits on eased proof of insurance fraud (Art. 40 VVG)", "u": "https://swissblawg.ch/2022/02/4a_394-2021-beweismass-voraussetzungen-nach-art-40-vvg-amtl-publ.html", "n": ""}, {"t": "GDV fraud estimates (~10% of claims \"suspicious\")", "u": "https://www.gdv.de/gdv/medien/medieninformationen/versicherungsbetrug-verursacht-schaeden-von-ueber-sechs-milliarden-euro-im-jahr-176852", "n": "industry self-estimate"}, {"t": "Comparis/Blick 2019: up to +74% motor premiums by nationality in CH", "u": "https://www.blick.ch/auto/news_n_trends/unfaire-kasko-versicherungspraemien-abzocke-bei-kosovaren-nordmazedoniern-und-tuerken-id20055130.html", "n": ""}, {"t": "Antidiskriminierungsstelle des Bundes, 2026 testing study on age-based pricing", "u": "https://www.antidiskriminierungsstelle.de/SharedDocs/aktuelles/DE/2026/20260708_kfz_testing.html", "n": ""}, {"t": "Structured Alpha: >$6bn US resolution, guilty plea (2022)", "u": "https://www.insurancejournal.com/news/international/2022/05/17/667952.htm", "n": ""}, {"t": "SRF Kassensturz/Espresso: Allianz Suisse cancellations without warning", "u": "https://www.srf.ch/sendungen/kassensturz-espresso/espresso/wenn-kunden-zu-teuer-werden-allianz-rauswurf-ohne-vorwarnung-nicht-ueblich-von-wegen", "n": ""}, {"t": "LG Stuttgart: Allianz Leben ordered to pay >€200,000 disability pension", "u": "https://www.anwalt.de/rechtstipps/landgericht-stuttgart-verurteilt-allianz-lebensversicherung-zur-zahlung-von-200-000-00-eur-aus-einer-bu-versicherung-239581.html", "n": "claimant-side law firm report"}, {"t": "Spiegel TV / trade press on Ahrtal flood-claim handling (industry-wide)", "u": "https://versicherungswirtschaft-heute.de/maerkte-und-vertrieb/2022-04-12/spiegel-tv-berichtet-wie-versicherer-den-flutopfern-im-ahrtal-die-entschaedigung-verweigern/", "n": ""}, {"t": "Exhibit C listing (live): Allianz agency, Leipheim (Bavaria)", "u": "https://www.google.com/maps/place/Allianz+Versicherung+Schwarz+und+Zimmermann+Generalvertretung+in+Leipheim/data=!4m2!3m1!1s0x479944970811727f:0x56a52d9b92fe6279?hl=en&gl=de", "n": "Google Maps"}, {"t": "Exhibit D listing (live): Allianz agency, Biberach an der Riß", "u": "https://www.google.com/maps/place/Allianz+Versicherung+Tobias+K%C3%B6hler+Hauptvertretung+in+Biberach+an+der+Ri%C3%9F/data=!4m2!3m1!1s0x479bc593f1622523:0x85138ce5603650c2?hl=en&gl=de", "n": "Google Maps"}, {"t": "Exhibit E listing (live): Allianz Suisse head office, Wallisellen", "u": "https://www.google.com/maps/place/Allianz+Suisse+Versicherungs-Gesellschaft+AG/data=!4m2!3m1!1s0x479aa0519c891d37:0xf302a6155822c2d7?hl=en&gl=ch", "n": "Google Maps"}, {"t": "Trustpilot: Allianz Suisse consumer ratings", "u": "https://ch.trustpilot.com/review/allianz.ch", "n": ""}]};
+const C={blue:'#37536d',orange:'#c96f33',red:'#a93f3b',green:'#54805c',gold:'#bd9a2f',grey:'#98989e'};
+Chart.defaults.font.family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif";
+Chart.defaults.font.size=12; Chart.defaults.color='#55555a';
+const fmt=n=>n.toLocaleString('en-US');
 
+new Chart(chartDist,{type:'bar',data:{labels:['1★','2★','3★','4★','5★'],datasets:[
+ {label:'Germany',data:DATA.dist.DE.map(d=>d.pct),counts:DATA.dist.DE.map(d=>d.n),backgroundColor:C.blue+'CC',borderRadius:4},
+ {label:'Switzerland',data:DATA.dist.CH.map(d=>d.pct),counts:DATA.dist.CH.map(d=>d.n),backgroundColor:C.red+'CC',borderRadius:4}]},
+ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{usePointStyle:true}},
+ tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y}% (${fmt(c.dataset.counts[c.dataIndex])})`}}},
+ scales:{y:{ticks:{callback:v=>v+'%'},max:100},x:{grid:{display:false}}}}});
+
+new Chart(chartMonthly,{type:'line',data:{labels:DATA.monthly.labels,datasets:[
+ {label:'Germany (left)',data:DATA.monthly.DE,borderColor:C.blue,backgroundColor:C.blue+'18',borderWidth:2,pointRadius:0,fill:true,tension:.25,yAxisID:'y'},
+ {label:'Switzerland (right)',data:DATA.monthly.CH,borderColor:C.red,borderWidth:1.8,pointRadius:0,fill:false,tension:.25,yAxisID:'y2'}]},
+ options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+ plugins:{legend:{position:'top',labels:{usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label.split(' (')[0]}: ${fmt(c.parsed.y)}`}}},
+ scales:{x:{ticks:{maxTicksLimit:12,callback:function(v){const l=this.getLabelForValue(v);return l.endsWith('-01')?l.slice(0,4):null}},grid:{display:false}},
+ y:{position:'left',title:{display:true,text:'DE / month'},beginAtZero:true},
+ y2:{position:'right',title:{display:true,text:'CH / month'},beginAtZero:true,grid:{drawOnChartArea:false}}}}});
+
+function yearChart(el,rows,color,hi){new Chart(el,{type:'bar',
+ data:{labels:rows.map(r=>r[0]),datasets:[{data:rows.map(r=>r[1]),backgroundColor:rows.map(r=>hi.includes(r[0])?C.orange+'DD':color+'B3'),borderRadius:3}]},
+ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmt(c.parsed.y)+' reviews'}}},
+ scales:{x:{grid:{display:false},ticks:{maxRotation:0}},y:{beginAtZero:true,ticks:{callback:v=>v>=1000?(v/1000)+'k':v}}}}});}
+yearChart(chartYearDE,DATA.yearly.DE,C.blue,['2025','2026']);
+yearChart(chartYearCH,DATA.yearly.CH,C.red,['2025','2026']);
+
+new Chart(chartAsym,{type:'bar',data:{labels:['Advisor / consultation|(5★ texts)','Claims / payout|(5★ texts)','Claims / payout|(negative texts)'],
+ datasets:[{label:'Germany',data:[DATA.asym.DE.p5_adv,DATA.asym.DE.p5_clm,DATA.asym.DE.ng_clm],backgroundColor:C.blue+'CC',borderRadius:4},
+ {label:'Switzerland',data:[DATA.asym.CH.p5_adv,DATA.asym.CH.p5_clm,DATA.asym.CH.ng_clm],backgroundColor:C.red+'CC',borderRadius:4}]},
+ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{usePointStyle:true}},
+ tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y}%`}}},
+ scales:{y:{ticks:{callback:v=>v+'%'},beginAtZero:true},x:{grid:{display:false},ticks:{callback:function(v){return this.getLabelForValue(v).split('|')}}}}}});
+
+let themeChart;
+function drawThemes(m){const t=DATA.themes[m];
+ if(themeChart)themeChart.destroy();
+ themeChart=new Chart(chartThemes,{type:'bar',data:{labels:t.map(x=>x[0]),datasets:[{data:t.map(x=>x[1]),counts:t.map(x=>x[2]),backgroundColor:(m==='DE'?C.blue:C.red)+'CC',borderRadius:4}]},
+ options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},
+ tooltip:{callbacks:{label:c=>`${c.parsed.x}% (${c.dataset.counts[c.dataIndex]} reviews)`}}},
+ scales:{x:{ticks:{callback:v=>v+'%'},beginAtZero:true},y:{grid:{display:false}}}}});}
+drawThemes('DE');
+document.querySelectorAll('#themeToggle button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('#themeToggle button').forEach(x=>x.classList.remove('on'));b.classList.add('on');drawThemes(b.dataset.m);});
+
+function renderQuotes(f){const g=quoteGrid;g.innerHTML='';
+ DATA.quotes.filter(q=>f==='all'||q.tags.includes(f)).forEach(q=>{const d=document.createElement('div');
+ d.className='quote'+(q.mkt==='DE'?' q-de-mkt':'');
+ d.innerHTML=`<div class="orig">„${q.orig}“</div><div class="trans">${q.en}</div><div class="who">${q.mkt==='DE'?'Germany':'Switzerland'} · ${q.rating}★ · ${q.date} · Allianz agency listing</div>`;
+ g.appendChild(d);});}
+renderQuotes('all');
+document.querySelectorAll('#quoteChips button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('#quoteChips button').forEach(x=>x.classList.remove('on'));b.classList.add('on');renderQuotes(b.dataset.t);});
+
+new Chart(chartLang,{type:'bar',data:{labels:['Negative reviews','Positive reviews'],
+ datasets:DATA.lang.CH.map((l,i)=>({label:l.lang,data:l.vals,backgroundColor:[C.blue,C.red,C.green,C.gold,C.grey][i]+'CC'}))},
+ options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{usePointStyle:true}},
+ tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.x}%`}}},
+ scales:{x:{stacked:true,max:100,ticks:{callback:v=>v+'%'}},y:{stacked:true,grid:{display:false}}}}});
+
+/* trend: log scale */
+new Chart(chartTrend,{type:'bar',data:{labels:DATA.trend.years,datasets:[
+ {label:'Suspect-positive reviews',data:DATA.trend.sus.map(v=>v||null),backgroundColor:C.gold+'CC',borderRadius:3},
+ {label:'Campaign-negative reviews',data:DATA.trend.camp.map(v=>v||null),backgroundColor:C.red+'CC',borderRadius:3}]},
+ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{usePointStyle:true}},
+ tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${fmt(c.parsed.y??0)}`}}},
+ scales:{y:{type:'logarithmic',min:1,ticks:{callback:v=>[1,10,100,1000,10000].includes(v)?fmt(v):null},title:{display:true,text:'reviews (log scale)'}},x:{grid:{display:false}}}}});
+
+new Chart(chartEL,{type:'bar',data:{labels:DATA.el.map(d=>d[0]),datasets:[{data:DATA.el.map(d=>d[1]),backgroundColor:DATA.el.map(d=>d[1]>10?C.red+'DD':C.grey+'99'),borderRadius:3}]},
+ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y+' one-star reviews posted'}}},
+ scales:{x:{grid:{display:false}},y:{beginAtZero:true}}}});
+
+new Chart(chartRecip,{type:'bar',data:{labels:Object.keys(DATA.recip),datasets:[{data:Object.values(DATA.recip),
+ backgroundColor:[C.red+'DD',C.orange+'CC',C.gold+'B3',C.grey+'99',C.grey+'66'],borderRadius:3}]},
+ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y+' pairs'}}},
+ scales:{x:{grid:{display:false}},y:{beginAtZero:true,title:{display:true,text:'reciprocal pairs'}}}}});
+pairRows.innerHTML=DATA.pairs.map(p=>`<tr><td>${p.a} ↔ ${p.b}</td><td class="num">${p.gap===0?'same day':p.gap+' d'}</td><td>${p.d1} / ${p.d2}</td></tr>`).join('');
+tourRows.innerHTML=DATA.tour.map(t=>`<tr><td>${t.name}</td><td class="num">${t.agencies}</td><td class="num">${t.cities}</td><td class="num">${t.avg.toFixed(2)}</td><td>${t.first} → ${t.last}</td><td class="num">${t.max30}</td></tr>`).join('');
+
+new Chart(chartSZ,{type:'bar',data:{labels:DATA.sz.map(d=>d[0].slice(5)),datasets:[
+ {label:'with text',data:DATA.sz.map(d=>d[1]-d[2]),backgroundColor:C.blue+'CC',stack:'s',borderRadius:2},
+ {label:'no text',data:DATA.sz.map(d=>d[2]),backgroundColor:C.grey+'99',stack:'s',borderRadius:2}]},
+ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{usePointStyle:true}},
+ tooltip:{callbacks:{footer:i=>'Total: '+i.reduce((a,b)=>a+b.parsed.y,0)}}},
+ scales:{x:{stacked:true,grid:{display:false},ticks:{maxRotation:0,maxTicksLimit:15}},y:{stacked:true,beginAtZero:true}}}});
+
+new Chart(chartBA,{type:'bar',data:{labels:['14 days before','14 days after'],
+ datasets:[{data:[DATA.ba.before,DATA.ba.after],backgroundColor:[C.grey+'B3',C.orange+'DD'],borderRadius:5,barPercentage:.5}]},
+ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},
+ tooltip:{callbacks:{label:c=>c.parsed.y+' five-star reviews per listing (avg)'}}},
+ scales:{y:{beginAtZero:true,title:{display:true,text:'avg 5★ per listing'}},x:{grid:{display:false}}}}});
+
+new Chart(chartHQ,{type:'bar',data:{labels:DATA.hq.map(d=>d[0]),datasets:[
+ {label:'5★',data:DATA.hq.map(d=>d[2]),backgroundColor:C.gold+'CC',stack:'s',borderRadius:2},
+ {label:'4★ and below',data:DATA.hq.map(d=>d[1]-d[2]),backgroundColor:C.grey+'99',stack:'s',borderRadius:2}]},
+ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{usePointStyle:true}}},
+ scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}}}});
+
+/* numbered sources */
+sourceOl.innerHTML=DATA.sources.map((s,i)=>`<li id="src${i+1}"><a href="${s.u}" target="_blank" rel="noopener">${s.t}</a>${s.n?' — '+s.n:''}</li>`).join('');
+/* anchor for toc */
+document.querySelector('.toc a[href="#src1"]').setAttribute('href','#src1x');
+</script>
 </body>
 </html>
